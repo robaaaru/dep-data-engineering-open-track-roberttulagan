@@ -1,0 +1,9 @@
+.DS_Store
+__pycache__/
+*.pyc
+.env
+
+reference-docs/
+AGENTS.md
+DESIGN.md
+CONTEXT.md
