@@ -19,7 +19,9 @@ DEP Cohort builders, civic tech practitioners, and policymakers interested in fo
 ## Likely Data Sources
 - **PSA Price Situationer** — bi-monthly Excel files with region-level retail rice prices (well-milled), available at [psa.gov.ph](https://psa.gov.ph/statistics/price-situationer/selected-agri-commodities)
 - **IBTrACS (NOAA)** — historical typhoon track data for the Western Pacific basin, available at [ncei.noaa.gov](https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r01/access/csv/)
-- **
+
+## Ingestion
+- The raw data for IBTrACS can be ingested through NOAA's API while the PSA excel files can be downloaded manually at psa.gov.ph
 
 ## Possible Final Dashboard
 An interactive dashboard hosted on GitHub Pages with two views — a heatmap showing all regions compared by percentage price spikes across typhoon events, and an annotated time series showing per-region price history with typhoon periods highlighted and recovery points marked.
