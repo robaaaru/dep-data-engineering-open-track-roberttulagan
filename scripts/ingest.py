@@ -1,23 +1,13 @@
-"""
-Phase 2 — Data Ingestion
-Replace this template with your own ingestion logic.
-"""
+import requests
 
-import os
+url = "https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r01/access/csv/ibtracs.WP.list.v04r01.csv"
 
-RAW_DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "raw")
+print("Downloading IBTrACS Western Pacific typhoon data...")
+response = requests.get(url, stream=True, timeout=120)
 
+with open("../data/raw/IBTrACS.WP.v04r01.csv", "wb") as f:
+    for chunk in response.iter_content(chunk_size=8192):
+        if chunk:
+            f.write(chunk)
 
-def ingest():
-    # TODO: replace with your ingestion logic
-    # Examples:
-    #   - Download a CSV from a URL using requests
-    #   - Call an API and save the JSON response
-    #   - Read a manually downloaded file and copy it here
-    raise NotImplementedError("Add your ingestion logic here.")
-
-
-if __name__ == "__main__":
-    os.makedirs(RAW_DATA_DIR, exist_ok=True)
-    ingest()
-    print("Ingestion complete. Check data/raw/ for output.")
+print("Done!")
