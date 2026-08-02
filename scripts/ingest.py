@@ -1,11 +1,17 @@
 import requests
 
-url = "https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r01/access/csv/ibtracs.WP.list.v04r01.csv"
+url = (
+    "https://erddap.aoml.noaa.gov/hdb/erddap/tabledap/IBTrACS_since1980_1.csv"
+    "?sid,season,name,time,latitude,longitude,wmo_wind"
+    "&basin=%22WP%22"
+    "&season>=2020"
+    "&season<=2026"
+)
 
-print("Downloading IBTrACS Western Pacific typhoon data...")
+print("Downloading filtered IBTrACS data from ERDDAP...")
 response = requests.get(url, stream=True, timeout=120)
 
-with open("../data/raw/IBTrACS.WP.v04r01.csv", "wb") as f:
+with open("../data/raw/IBTrACS_WP_2020_2026.csv", "wb") as f:
     for chunk in response.iter_content(chunk_size=8192):
         if chunk:
             f.write(chunk)
