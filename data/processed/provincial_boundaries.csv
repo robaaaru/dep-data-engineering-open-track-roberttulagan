@@ -1,0 +1,84 @@
+province,region,lat,lon,province_pcode
+Basilan,Bangsamoro Autonomous Region In Muslim Mindanao (BARMM),6.5788698,122.12724425,PH19007
+Lanao Del Sur,Bangsamoro Autonomous Region In Muslim Mindanao (BARMM),7.78185002,124.34850175,PH19036
+Maguindanao,Bangsamoro Autonomous Region In Muslim Mindanao (BARMM),7.18955064,124.25404525,PH19087
+Sulu,Bangsamoro Autonomous Region In Muslim Mindanao (BARMM),5.97358443,121.15629622,PH19066
+Tawi-Tawi,Bangsamoro Autonomous Region In Muslim Mindanao (BARMM),5.19783787,120.0342535,PH19070
+Abra,Cordillera Administrative Region (CAR),17.5639419,120.7996429,PH14001
+Apayao,Cordillera Administrative Region (CAR),18.08946758,121.19680305,PH14081
+Benguet,Cordillera Administrative Region (CAR),16.55348834,120.70264554,PH14011
+Ifugao,Cordillera Administrative Region (CAR),16.82368566,121.1700354,PH14027
+Kalinga,Cordillera Administrative Region (CAR),17.42996788,121.31300079,PH14032
+Mountain Province,Cordillera Administrative Region (CAR),17.05592758,121.05256767,PH14044
+Marinduque,Mimaropa Region,13.38482909,121.98254897,PH17040
+Occidental Mindoro,Mimaropa Region,12.86934587,121.01371755,PH17051
+Oriental Mindoro,Mimaropa Region,12.86676633,121.36614097,PH17052
+Palawan,Mimaropa Region,12.14507988,120.02798499,PH17053
+Romblon,Mimaropa Region,12.386653,122.58659184,PH17059
+NCR,National Capital Region (NCR),14.59932236,120.98493761,PH13039
+Ilocos Norte,Region I (Ilocos Region),18.21820507,120.73941457,PH01028
+Ilocos Sur,Region I (Ilocos Region),17.28746596,120.53033434,PH01029
+La Union,Region I (Ilocos Region),16.56110332,120.41695417,PH01033
+Pangasinan,Region I (Ilocos Region),16.00595322,120.33322685,PH01055
+Batanes,Region II (Cagayan Valley),20.7621812,121.84616566,PH02009
+Cagayan,Region II (Cagayan Valley),18.06401878,121.81553421,PH02015
+Isabela,Region II (Cagayan Valley),16.98951132,122.01735492,PH02031
+Nueva Vizcaya,Region II (Cagayan Valley),16.25504614,121.10957184,PH02050
+Quirino,Region II (Cagayan Valley),16.28469367,121.67692906,PH02057
+Aurora,Region III (Central Luzon),15.75281079,121.45850071,PH03077
+Bataan,Region III (Central Luzon),14.66513774,120.42775986,PH03008
+Bulacan,Region III (Central Luzon),14.98035044,121.10858957,PH03014
+Nueva Ecija,Region III (Central Luzon),15.65687999,120.99079632,PH03049
+Pampanga,Region III (Central Luzon),15.02291883,120.65665641,PH03054
+Tarlac,Region III (Central Luzon),15.51461276,120.46262572,PH03069
+Zambales,Region III (Central Luzon),15.30595813,120.11937122,PH03071
+Batangas,Region IV-A (Calabarzon),13.91360708,121.03701312,PH04010
+Cavite,Region IV-A (Calabarzon),14.27838709,120.85146283,PH04021
+Laguna,Region IV-A (Calabarzon),14.27956327,121.51097425,PH04034
+Quezon,Region IV-A (Calabarzon),14.18943105,121.67080334,PH04056
+Rizal,Region IV-A (Calabarzon),14.56063868,121.26839748,PH04058
+City Of Isabela,Region IX (Zamboanga Peninsula),6.65293735,121.97727941,PH09097
+Zamboanga Del Norte,Region IX (Zamboanga Peninsula),7.93327397,122.42699002,PH09072
+Zamboanga Del Sur,Region IX (Zamboanga Peninsula),7.81459,123.25706509,PH09073
+Zamboanga Sibugay,Region IX (Zamboanga Peninsula),7.69319899,122.93933716,PH09083
+Albay,Region V (Bicol Region),13.25471444,123.55369634,PH05005
+Camarines Norte,Region V (Bicol Region),14.09345585,122.81669126,PH05016
+Camarines Sur,Region V (Bicol Region),13.68197008,123.20627302,PH05017
+Catanduanes,Region V (Bicol Region),13.80842176,124.27470626,PH05020
+Masbate,Region V (Bicol Region),12.16086097,123.74503562,PH05041
+Sorsogon,Region V (Bicol Region),12.82761527,123.99789027,PH05062
+Aklan,Region VI (Western Visayas),11.62519917,122.27675419,PH06004
+Antique,Region VI (Western Visayas),11.11709162,122.14542001,PH06006
+Capiz,Region VI (Western Visayas),11.37370827,122.64133496,PH06019
+Guimaras,Region VI (Western Visayas),10.57970394,122.60885872,PH06079
+Iloilo,Region VI (Western Visayas),11.03243959,122.61539346,PH06030
+Negros Occidental,Region VI (Western Visayas),10.22389048,122.99911854,PH06045
+Bohol,Region VII (Central Visayas),9.88064393,124.20675476,PH07012
+Cebu,Region VII (Central Visayas),10.34928559,123.78125813,PH07022
+Negros Oriental,Region VII (Central Visayas),9.73899193,122.99480169,PH07046
+Siquijor,Region VII (Central Visayas),9.19785786,123.55958106,PH07061
+Biliran,Region VIII (Eastern Visayas),11.58432949,124.48540604,PH08078
+Eastern Samar,Region VIII (Eastern Visayas),11.68016857,125.37822695,PH08026
+Leyte,Region VIII (Eastern Visayas),10.87437837,124.86086048,PH08037
+Northern Samar,Region VIII (Eastern Visayas),12.36118849,124.81821082,PH08048
+Southern Leyte,Region VIII (Eastern Visayas),10.30265828,125.1561548,PH08064
+Western Samar,Region VIII (Eastern Visayas),11.71342136,125.14911842,PH08060
+Bukidnon,Region X (Northern Mindanao),8.0051681,124.96819481,PH10013
+Camiguin,Region X (Northern Mindanao),9.16838842,124.71361731,PH10018
+Lanao del Norte,Region X (Northern Mindanao),8.01433078,123.93350271,PH10035
+Misamis Occidental,Region X (Northern Mindanao),8.34118801,123.70566845,PH10042
+Misamis Oriental,Region X (Northern Mindanao),8.62689683,124.98187606,PH10043
+Davao De Oro,Region XI (Davao Region),7.53552959,126.0852385,PH11082
+Davao Del Norte,Region XI (Davao Region),7.61280915,125.62624264,PH11023
+Davao Del Sur,Region XI (Davao Region),6.99828703,125.37562023,PH11024
+Davao Occidental,Region XI (Davao Region),6.09403861,125.62203303,PH11086
+Davao Oriental,Region XI (Davao Region),7.13567704,126.27482899,PH11025
+North Cotabato,Region XII (Soccsksargen),7.18255075,125.03926534,PH12047
+Sarangani,Region XII (Soccsksargen),6.02935078,124.65844513,PH12080
+South Cotabato,Region XII (Soccsksargen),6.31303751,124.7945219,PH12063
+Sultan Kudarat,Region XII (Soccsksargen),6.50123904,124.31932824,PH12065
+Agusan Del Norte,Region XIII (Caraga),9.08001392,125.64108928,PH16002
+Agusan Del Sur,Region XIII (Caraga),8.5804965,125.63040652,PH16003
+Dinagat Islands,Region XIII (Caraga),10.16163118,125.58748098,PH16085
+Surigao Del Norte,Region XIII (Caraga),9.57541064,125.57633641,PH16067
+Surigao Del Sur,Region XIII (Caraga),8.71029166,126.10125328,PH16068

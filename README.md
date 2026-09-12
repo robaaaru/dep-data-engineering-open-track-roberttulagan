@@ -38,3 +38,33 @@ For PSA rice price data, manually download the bi-monthly Excel files for 2021â€
 ## Possible Final Dashboard
 
 An interactive dashboard hosted on GitHub Pages with two views â€” a heatmap showing all regions compared by percentage price spikes across typhoon events, and an annotated time series showing per-region price history with typhoon periods highlighted and recovery points marked.
+
+## SQLite Staging Layer
+
+After the processed CSVs have been generated, load them into SQLite:
+
+```bash
+python scripts/load_sqlite.py
+```
+
+This creates `data/processed/project.db` with these tables:
+
+- `rice_prices`: one row per province, price phase, and observation date.
+- `provincial_boundaries`: one row per province with region and representative coordinates.
+- `typhoon_tracks`: one row per storm and forecast time, including wind-signal provinces.
+- `load_metadata`: source CSV and row count for each loaded table.
+
+The loader reads the processed CSVs with pandas' normal missing-value parsing.
+Blank fields, `NaN`, `NaT`, and pandas missing scalars are inserted as SQL
+`NULL`; valid values, including zero, are retained. It does not impute or
+silently replace missing observations. The three data tables are dropped and
+recreated inside one SQLite transaction on each run, making reruns idempotent
+and ensuring stale rows are removed when the CSVs change. Primary keys and
+`NOT NULL` constraints protect the grain and required fields while nullable
+measurements remain available for later gold-layer decisions.
+
+To write a database somewhere else:
+
+```bash
+python scripts/load_sqlite.py --database path/to/project.db
+```
