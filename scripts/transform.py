@@ -30,7 +30,8 @@ TYPHOON_DIR = RAW / "Typhoon and Coordinates"
 
 RICE_OUTPUT = PROCESSED / "rice_data.csv"
 BOUNDARIES_OUTPUT = PROCESSED / "provincial_boundaries.csv"
-TYPHOON_OUTPUT = PROCESSED / "typhoon_tracks.csv"
+TYPHOON_FORECAST_OUTPUT = PROCESSED / "typhoon_forecast.csv"
+TYPHOON_ISSUED_OUTPUT = PROCESSED / "province_signals.csv"
 MANIFEST_DIR = PROCESSED / ".manifests"
 RICE_MANIFEST = MANIFEST_DIR / "rice.json"
 BOUNDARIES_MANIFEST = MANIFEST_DIR / "provincial_boundaries.json"
@@ -417,7 +418,7 @@ def build_track(folder, province_allowlist, pdfs=None):
 		raise ValueError(f"No bulletins could be parsed from {folder}")
 	result = pd.DataFrame(rows)
 	result["issued_time"] = pd.to_datetime(result["issued_time"])
-	return result.sort_values(["sid", "forecast_time", "issued_time"]).drop_duplicates(["sid", "forecast_time"], keep="last").sort_values("forecast_time").reset_index(drop=True)
+	return result
 
 
 def transform_typhoon_tracks():
@@ -442,25 +443,42 @@ def transform_typhoon_tracks():
 		except (FileNotFoundError, ValueError) as error:
 			print(f"SKIPPED {os.path.basename(folder)}: {error}")
 	if not tracks:
-		print(f"No new PAGASA bulletins; {TYPHOON_OUTPUT.name} is up to date.")
+		print("No new PAGASA bulletins; outputs are up to date.")
 		return
-	if TYPHOON_OUTPUT.exists():
-		tracks.insert(0, pd.read_csv(TYPHOON_OUTPUT))
-	final = pd.concat(tracks, ignore_index=True)
-	final["issued_time"] = pd.to_datetime(final["issued_time"])
-	final["forecast_time"] = pd.to_datetime(final["forecast_time"])
-	final = final.sort_values(["sid", "forecast_time", "issued_time"]).drop_duplicates(["sid", "forecast_time"], keep="last").sort_values(["sid", "forecast_time"]).reset_index(drop=True)
+
+	final_new = pd.concat(tracks, ignore_index=True)
+	final_new["issued_time"] = pd.to_datetime(final_new["issued_time"])
+	final_new["forecast_time"] = pd.to_datetime(final_new["forecast_time"])
+
+	forecast = final_new[["sid", "season", "name", "forecast_time", "latitude", "longitude", "msw_kmh", "cat"]].copy()
+	issued = final_new[["sid", "season", "name", "issued_time", "tcws_1", "tcws_2", "tcws_3", "tcws_4", "tcws_5"]].copy()
+
+	if TYPHOON_FORECAST_OUTPUT.exists():
+		forecast = pd.concat([pd.read_csv(TYPHOON_FORECAST_OUTPUT), forecast], ignore_index=True)
+		forecast["forecast_time"] = pd.to_datetime(forecast["forecast_time"])
+	
+	if TYPHOON_ISSUED_OUTPUT.exists():
+		issued = pd.concat([pd.read_csv(TYPHOON_ISSUED_OUTPUT), issued], ignore_index=True)
+		issued["issued_time"] = pd.to_datetime(issued["issued_time"])
+
+	forecast = forecast.drop_duplicates(["sid", "forecast_time"], keep="last").sort_values(["sid", "forecast_time"]).reset_index(drop=True)
+	issued = issued.drop_duplicates(["sid", "issued_time"], keep="last").sort_values(["sid", "issued_time"]).reset_index(drop=True)
 
 	# Validation: make sure the parser produced usable coordinates and one
 	# record per storm/forecast time, rather than silently writing bad tracks.
-	if final.empty or final[["sid", "forecast_time"]].duplicated().any():
-		raise ValueError("PAGASA output is empty or contains duplicate track times.")
-	if not final["latitude"].between(-90, 90).all() or not final["longitude"].between(-180, 180).all():
-		raise ValueError("PAGASA output contains invalid coordinates.")
+	if forecast.empty or forecast[["sid", "forecast_time"]].duplicated().any():
+		raise ValueError("PAGASA forecast output is empty or contains duplicate track times.")
+	if not forecast["latitude"].between(-90, 90).all() or not forecast["longitude"].between(-180, 180).all():
+		raise ValueError("PAGASA forecast output contains invalid coordinates.")
+		
+	if issued.empty or issued[["sid", "issued_time"]].duplicated().any():
+		raise ValueError("PAGASA issued output is empty or contains duplicate issued times.")
+
 	PROCESSED.mkdir(parents=True, exist_ok=True)
-	final.to_csv(TYPHOON_OUTPUT, index=False)
+	forecast.to_csv(TYPHOON_FORECAST_OUTPUT, index=False)
+	issued.to_csv(TYPHOON_ISSUED_OUTPUT, index=False)
 	save_manifest(TYPHOON_MANIFEST, manifest)
-	print(f"Created {TYPHOON_OUTPUT} ({len(final):,} rows).")
+	print(f"Created {TYPHOON_FORECAST_OUTPUT.name} ({len(forecast):,} rows) and {TYPHOON_ISSUED_OUTPUT.name} ({len(issued):,} rows).")
 
 
 def main():
