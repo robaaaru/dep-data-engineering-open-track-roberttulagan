@@ -11,3 +11,5 @@ pandas
 numpy
 openpyxl
 pdfplumber
+matplotlib
+jupyter
