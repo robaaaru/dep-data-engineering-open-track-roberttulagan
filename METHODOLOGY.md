@@ -48,7 +48,7 @@ High means **strictly above** the median across units; ties are low. The box def
 |---|---|---|
 | High | High | Most vulnerable (red circle) |
 | High | Low | Exposed but stable (blue square) |
-| Low | High | Unstable not storm-driven (orange triangle) |
+| Low | High | High price swings, lower severe-warning exposure (orange triangle) |
 | Low | Low | Low concern (light-blue diamond) |
 
 Province grids draw the vertical line at 1.5. Deterministic sideways jitter is display-only, never crosses that line, and does not change calculations. Stars mark units that are also Most vulnerable under the one-reading-per-month check. Regions within 0.01 of the main price-spike median are listed as borderline; Caraga sits on the median line and counts as low.

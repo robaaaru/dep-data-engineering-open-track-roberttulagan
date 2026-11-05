@@ -127,10 +127,18 @@ Each transform checks its own output before writing anything to disk — bad dat
 
 - **Incremental processing (ingest + transform):** a hash of each source file is stored in a manifest (`data/processed/.manifests/`).
 - **Incremental loading (SQLite):** file- and row-level hashes make re-runs idempotent.
-- **EDA first:** warnings and prices are described separately before overlap.
-- **Repeat hit:** a Signal 3+ warning within 14 days of the same province’s previous one (a chosen default, based on bulletin times).
-- **Upside swing:** percentage rises between consecutive readings, with falls set to zero, summarized as a root-mean-square rise. The main version uses all 48 readings; the robustness check uses the 24 first-of-month readings.
-- **Overlap:** above-median exposure and upside swing, counted at region level, province level, and as a share of price-covered provinces per region; no statistical tests are used.
+- **EDA first:** warnings and prices are described separately before overlap. **Meaning:** the notebook first explains each dataset on its own before combining them.
+- **`n_severe`:** the number of storms in which a province reached Wind Signal 3 or higher. **Meaning:** how many storms brought that province a relatively high warning level.
+- **Repeat hit:** a Signal 3+ warning within 14 days of the same province’s previous one (a chosen default, based on bulletin times). **Meaning:** the province was listed for high warning levels again soon after an earlier high-warning listing; this does not measure damage or recovery.
+- **Upside swing:** percentage rises between consecutive readings, with falls set to zero, summarized as a root-mean-square rise. The main version uses all 48 readings; the robustness check uses the 24 first-of-month readings. **Meaning:** how sharply rice prices tended to rise; falling prices do not add to the price-spike score.
+- **Median:** the middle value after all provinces or regions are ordered from lowest to highest. **Meaning:** a typical value; half of the units are below it and half are above it.
+- **Interquartile range (IQR):** the range containing the middle 50% of observations. **Meaning:** where the central group of provinces sits, without letting the highest or lowest values dominate the description.
+- **Right-skewed:** a distribution with many lower values and a smaller number of higher values. **Meaning:** most provinces had lower exposure or price rises, while a few had much higher values.
+- **Outlier:** a value unusually far from the rest of the data. **Meaning:** a result worth checking, but not automatically a mistake.
+- **Overlap:** above-median exposure and upside swing, counted at region level, province level, and as a share of price-covered provinces per region; no statistical tests are used. **Meaning:** a province or region has relatively high values for both measures in this dataset, not that typhoons caused price increases.
+- **Most vulnerable:** the screening label for units above both medians. **Meaning:** a place to consider for closer monitoring, not a claim that it experienced the most physical damage or that its prices were caused by storms.
+- **Robustness check:** comparison of the all-reading result with a calculation using one price reading per month. **Meaning:** a test of whether the broad result stays similar when the price data are sampled differently.
+- **Descriptive analysis:** an analysis that summarizes patterns without proving cause and effect. **Meaning:** the notebook shows what happened together in the data, but cannot prove why it happened.
 - **Chart readability:** province-point jitter, labels placed beneath dots, stars, and legend placement are display-only; they do not alter any numbers, classifications, or definitions.
 
 ## Findings and limits (summary)
@@ -175,7 +183,7 @@ Color provinces by the four all-reading boxes:
 
 - Most vulnerable;
 - Exposed but stable;
-- Unstable not storm-driven; and
+- High price swings, lower severe-warning exposure; and
 - Low concern.
 
 Use a separate visual state for missing price data, including Sulu and Batanes. On hover, show province, region, `n_severe`, upside swing, box, number of missing readings, and whether the province is also Most vulnerable under the monthly check.
