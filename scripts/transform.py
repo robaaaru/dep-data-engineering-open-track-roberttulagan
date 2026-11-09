@@ -483,11 +483,16 @@ def transform_typhoon_tracks():
 
 def main():
 	"""Run each independent transformation; an existing output is skipped."""
+	failures = []
 	for transform in (transform_rice_prices, transform_boundaries, transform_typhoon_tracks):
 		try:
 			transform()
 		except Exception as error:
 			print(f"FAILED {transform.__name__}: {error}")
+			failures.append((transform.__name__, error))
+	if failures:
+		names = ", ".join(name for name, _ in failures)
+		raise RuntimeError(f"One or more transforms failed: {names}")
 
 
 if __name__ == "__main__":

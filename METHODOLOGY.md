@@ -16,6 +16,8 @@ The notebook finds the project root by walking upward until `data/processed/proj
 
 The database contains a `typhoon_forecast` table, but it is **not used** in this analysis. No CSV is read. Rice rows represent a half-month period (1st or 2nd phase). Sulu and Batanes have no regular-milled readings and are excluded from volatility calculations.
 
+The connected run is orchestrated by `scripts/run_pipeline.py`: it can ingest and transform source data, rebuild the SQLite database, and execute `notebooks/kpi_and_segmentation_analysis.ipynb`. The notebook is executed with cell errors treated as pipeline failures.
+
 ## 3. Reshaping and exposure
 
 The five signal columns are split on semicolons and reshaped to one row per province listed in a bulletin. For each `(sid, province)` pair, peak signal is the highest level reached in any bulletin for that storm. `n_severe` counts storms whose peak signal is at least 3. A never-warned province has `n_severe = 0`. Duration is not measured because provinces can drop in and out of bulletins.
@@ -30,7 +32,9 @@ EDA is completed before overlap is counted. A storm is counted once, in the mont
 
 **Monthly national price.** Each monthly point is the median of all regular-milled readings from both phases in that month. The band is the 10th to 90th percentile of those same readings. For example, the January 2024 point combines every available first- and second-phase regular-milled reading in January.
 
-**Price level by region.** This is the median of all regular-milled readings from the region's provinces over all months. It is a two-year level, not a measure of price spikes. Chart 2 shows the national price path and regional upside-spike levels. Charts 3 and 4 show regional and provincial overlap grids. Chart 5 is a standalone descriptive view of province-level upside swing. These are the five charts saved to `output/figures/`.
+**Price level by region.** This is the median of all regular-milled readings from the region's provinces over all months. It is a two-year level, not a measure of price spikes. Chart 2 shows the national price path and regional upside-spike levels. Charts 3 and 4 show regional and provincial overlap grids. Chart 5 is a standalone descriptive view of province-level upside swing. Chart 6 compares the warning and price signals between 2024 and 2025. These are the six charts saved to `output/figures/`.
+
+**Year-over-year comparison.** Chart 6 groups the warning and price measures by calendar year. For each region and year, severe-warning exposure is summarized using the median province-level `n_severe`, while price movement is summarized using the median annual upside swing of its price-covered provinces. The comparison is descriptive: it shows whether the signals look similar or different across the two years, but it does not explain why they differ or establish causation.
 
 ## 5. Price volatility
 
@@ -63,13 +67,16 @@ Regional shares are printed as `k/n`: the number of Most vulnerable provinces di
 
 **Typhoons:** Chart 1 shows storm timing, storm type, frequent severe-warning provinces, and repeat-hit timing.  
 **Prices:** Chart 2 shows the national price path and two-year regional price levels; Chart 5 shows province-level upside swing alone for descriptive purposes.  
-**Overlap:** Charts 3 and 4 are single-panel grids using upside swing across all 48 readings. Stars show units that also pass the one-reading-per-month check. Labels are centered directly beneath their dots without leader lines. Every grid uses the same four box shapes.
+**Overlap:** Charts 3 and 4 are single-panel grids using upside swing across all 48 readings. Stars show units that also pass the one-reading-per-month check. Labels are centered directly beneath their dots without leader lines. Every grid uses the same four box shapes.  
+**Year-over-year:** Chart 6 compares regional median severe-warning exposure and annual median upside swing in 2024 and 2025. Differences are interpreted as descriptive changes in the observed data, not as effects of typhoons on prices.
 
 ## 10. Findings and decisions
 
 The run checks 2,717 long warning rows, 63 provinces ever warned, 29 warned storms out of 41, 568 province-storm pairs, and peak counts of 260, 168, 75, 54, and 11 for Signals 1 through 5. Storms occur in 14 of 24 months. There are 28 repeat hits across 16 provinces; Rizal has 4, while Cagayan and Ilocos Sur have 3 each.
 
 The national regular-milled price ends lower for 75 of 81 provinces. Upside swing has a median of about 1.98 across all 48 readings and about 2.11 under one reading per month. The regional Most vulnerable list is Bicol, CAR, and Cagayan Valley; CAR and Cagayan Valley also pass the monthly check. Twelve provinces are Most vulnerable in the all-reading version, and 10 are Most vulnerable under both versions.
+
+The year-over-year comparison shows that warning exposure and price upside swing do not move in exactly the same way across all regions. Some regions have higher price swings in 2025, while others are higher in 2024; warning exposure also varies by region and year. This comparison helps show whether the overall overlap appears persistent or concentrated in one calendar year, but the differences may reflect different storms, market conditions, reporting coverage, or other factors.
 
 | Decision | Choice |
 |---|---|
@@ -80,6 +87,7 @@ The national regular-milled price ends lower for 75 of 81 provinces. Upside swin
 | Monthly national price | Median of all regular-milled readings from both phases |
 | Regional roll-up | Province median |
 | Repeat hit | Within 14 days, based on bulletin issue times |
+| Year comparison | Regional medians calculated separately for 2024 and 2025 |
 | Missing prices | Exclude Sulu and Batanes from volatility |
 | Forecast table | `typhoon_forecast` not used |
 
