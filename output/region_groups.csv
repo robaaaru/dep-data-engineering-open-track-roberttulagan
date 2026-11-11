@@ -1,0 +1,18 @@
+region_short,n_provinces,n_severe,upside_swing,box,month_box,robust
+BARMM,5,0.0,2.665612875354748,"High price swings, lower severe-warning exposure","High price swings, lower severe-warning exposure",False
+Bicol,6,2.0,2.5099668732520217,Most vulnerable,Exposed but stable,False
+CAR,6,4.5,3.106921298403041,Most vulnerable,Most vulnerable,True
+Cagayan Valley,5,4.0,2.4167459213865143,Most vulnerable,Most vulnerable,True
+Calabarzon,5,1.0,1.5454924463646367,Low concern,Low concern,False
+Caraga,5,0.0,2.082374015339112,Low concern,"High price swings, lower severe-warning exposure",False
+Central Luzon,7,2.0,1.1543835049804607,Exposed but stable,Exposed but stable,False
+Central Visayas,4,1.0,1.908478955203952,Low concern,Low concern,False
+Davao,5,0.0,2.3382645821851296,"High price swings, lower severe-warning exposure",Low concern,False
+Eastern Visayas,6,1.0,0.8238368398698336,Low concern,Low concern,False
+Ilocos,4,4.5,1.7126275846953782,Exposed but stable,Exposed but stable,False
+Mimaropa,5,1.0,4.021437739168381,"High price swings, lower severe-warning exposure","High price swings, lower severe-warning exposure",False
+NCR,1,6.0,0.47087591373998006,Exposed but stable,Exposed but stable,False
+Northern Mindanao,5,0.0,1.7429407531624215,Low concern,"High price swings, lower severe-warning exposure",False
+Soccsksargen,4,0.0,2.4852350872310303,"High price swings, lower severe-warning exposure","High price swings, lower severe-warning exposure",False
+Western Visayas,6,1.0,2.184063507351847,"High price swings, lower severe-warning exposure","High price swings, lower severe-warning exposure",False
+Zamboanga Peninsula,4,0.0,1.1801361565462962,Low concern,Low concern,False

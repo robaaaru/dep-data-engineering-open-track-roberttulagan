@@ -32,13 +32,15 @@ EDA is completed before overlap is counted. A storm is counted once, in the mont
 
 **Monthly national price.** Each monthly point is the median of all regular-milled readings from both phases in that month. The band is the 10th to 90th percentile of those same readings. For example, the January 2024 point combines every available first- and second-phase regular-milled reading in January.
 
-**Price level by region.** This is the median of all regular-milled readings from the region's provinces over all months. It is a two-year level, not a measure of price spikes. Chart 2 shows the national price path and regional upside-spike levels. Charts 3 and 4 show regional and provincial overlap grids. Chart 5 is a standalone descriptive view of province-level upside swing. Chart 6 compares the warning and price signals between 2024 and 2025. These are the six charts saved to `output/figures/`.
+**Price level by region.** This is the median of all regular-milled readings from the region's provinces over all months. It is a two-year level, not a measure of price spikes. Chart 2 shows the national price path and regional upside-spike levels. Charts 3 and 4 show regional and provincial overlap grids. Chart 5 compares the warning and price signals between 2024 and 2025. These are the five charts saved to `output/figures/`.
 
-**Year-over-year comparison.** Chart 6 groups the warning and price measures by calendar year. For each region and year, severe-warning exposure is summarized using the median province-level `n_severe`, while price movement is summarized using the median annual upside swing of its price-covered provinces. The comparison is descriptive: it shows whether the signals look similar or different across the two years, but it does not explain why they differ or establish causation.
+**Year-over-year comparison.** Chart 5 groups the warning and price measures by calendar year. For each region and year, severe-warning exposure is summarized using the median province-level `n_severe`, while price movement is summarized using the median annual upside swing of its price-covered provinces. The comparison is descriptive: it shows whether the signals look similar or different across the two years, but it does not explain why they differ or establish causation.
 
 ## 5. Price volatility
 
 Prices are sorted by province, period, and phase. **Upside swing** is the root-mean-square of percentage rises between consecutive readings, with falls counted as zero. The main calculation uses all 48 readings in the price table. A robustness check applies the same formula to the 24 first-of-month readings. Measures of overall spread were not used because a steady decline inflates them; 75 of 81 provinces ended lower. Total change is printed only as a descriptive end-versus-start summary, and reporting rhythm is described by the share of months with identical first- and second-phase prices.
+
+The notebook also tracks a **top-five repeatedly hit provinces KPI**. A repeat hit is a later first severe listing for the same province within 14 days of the previous first severe listing. For each year, provinces are ranked by repeat-hit count, with alphabetical ordering used to break ties, and the five highest-ranked provinces are reported. This gives stakeholders a clear monitoring list; it is not a damage or recovery measure.
 
 ## 6. Rolling up to regions
 
@@ -66,9 +68,9 @@ Regional shares are printed as `k/n`: the number of Most vulnerable provinces di
 ## 9. Chart guide
 
 **Typhoons:** Chart 1 shows storm timing, storm type, frequent severe-warning provinces, and repeat-hit timing.  
-**Prices:** Chart 2 shows the national price path and two-year regional price levels; Chart 5 shows province-level upside swing alone for descriptive purposes.  
+**Prices:** Chart 2 shows the national price path and two-year regional price levels.
 **Overlap:** Charts 3 and 4 are single-panel grids using upside swing across all 48 readings. Stars show units that also pass the one-reading-per-month check. Labels are centered directly beneath their dots without leader lines. Every grid uses the same four box shapes.  
-**Year-over-year:** Chart 6 compares regional median severe-warning exposure and annual median upside swing in 2024 and 2025. Differences are interpreted as descriptive changes in the observed data, not as effects of typhoons on prices.
+**Year-over-year:** Chart 5 compares regional median severe-warning exposure and annual median upside swing in 2024 and 2025. Differences are interpreted as descriptive changes in the observed data, not as effects of typhoons on prices.
 
 ## 10. Findings and decisions
 
@@ -81,12 +83,13 @@ The year-over-year comparison shows that warning exposure and price upside swing
 | Decision | Choice |
 |---|---|
 | Price-spike measure | Upside swing across all 48 readings |
+| Annual monitoring KPI | Ranked list of the five provinces with the most repeat hits |
 | Exposure axis | `n_severe` only |
 | Overlap | Above-median exposure and upside swing |
 | Robustness check | Same formula on 24 first-of-month readings |
 | Monthly national price | Median of all regular-milled readings from both phases |
 | Regional roll-up | Province median |
-| Repeat hit | Within 14 days, based on bulletin issue times |
+| Repeat-hit KPI | Sum of repeat-hit events in the top five provinces by year |
 | Year comparison | Regional medians calculated separately for 2024 and 2025 |
 | Missing prices | Exclude Sulu and Batanes from volatility |
 | Forecast table | `typhoon_forecast` not used |
@@ -101,6 +104,7 @@ The data cover two years, counts are small, and region sizes range from 1 to 7 p
 - **Peak:** Highest signal level for a province during one storm.
 - **n_severe:** Number of storms with peak signal at least 3.
 - **Upside swing:** Root-mean-square percentage rise, with falls counted as zero.
+- **Repeat hit:** A later first severe listing within 14 days of the same province's previous first severe listing.
 - **Overlap:** Above-median exposure and above-median upside swing.
 - **Borderline:** Within 0.01 of an instability median.
 - **Robustness check:** Comparison with the one-reading-per-month box assignment.

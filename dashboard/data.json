@@ -1,0 +1,1289 @@
+{
+  "meta": {
+    "priceMedian": 1.98,
+    "exposureMedian": 1,
+    "provinceCount": 81,
+    "regionCount": 17,
+    "everWarnedCount": 63,
+    "mostVulnerableCount": 12,
+    "mostVulnerableRegionCount": 3,
+    "top5RepeatHitProvinceCount": 5
+  },
+  "provinces": [
+    {
+      "province": "Abra",
+      "region": "Cordillera Administrative Region (CAR)",
+      "lat": 17.5639419,
+      "lon": 120.7996429,
+      "severeWarnings": 6,
+      "upsideSwing": 3.57,
+      "group": "Most vulnerable",
+      "repeatHits": 2
+    },
+    {
+      "province": "Agusan Del Norte",
+      "region": "Region XIII (Caraga)",
+      "lat": 9.08001392,
+      "lon": 125.64108928,
+      "severeWarnings": 0,
+      "upsideSwing": 2.08,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Agusan Del Sur",
+      "region": "Region XIII (Caraga)",
+      "lat": 8.5804965,
+      "lon": 125.63040652,
+      "severeWarnings": 0,
+      "upsideSwing": 1.1,
+      "group": "Low concern",
+      "repeatHits": 0
+    },
+    {
+      "province": "Aklan",
+      "region": "Region VI (Western Visayas)",
+      "lat": 11.62519917,
+      "lon": 122.27675419,
+      "severeWarnings": 1,
+      "upsideSwing": 1.83,
+      "group": "Low concern",
+      "repeatHits": 0
+    },
+    {
+      "province": "Albay",
+      "region": "Region V (Bicol Region)",
+      "lat": 13.25471444,
+      "lon": 123.55369634,
+      "severeWarnings": 2,
+      "upsideSwing": 1.8,
+      "group": "Exposed but stable",
+      "repeatHits": 0
+    },
+    {
+      "province": "Antique",
+      "region": "Region VI (Western Visayas)",
+      "lat": 11.11709162,
+      "lon": 122.14542001,
+      "severeWarnings": 1,
+      "upsideSwing": 1.76,
+      "group": "Low concern",
+      "repeatHits": 0
+    },
+    {
+      "province": "Apayao",
+      "region": "Cordillera Administrative Region (CAR)",
+      "lat": 18.08946758,
+      "lon": 121.19680305,
+      "severeWarnings": 5,
+      "upsideSwing": 3.53,
+      "group": "Most vulnerable",
+      "repeatHits": 2
+    },
+    {
+      "province": "Aurora",
+      "region": "Region III (Central Luzon)",
+      "lat": 15.75281079,
+      "lon": 121.45850071,
+      "severeWarnings": 4,
+      "upsideSwing": 4.41,
+      "group": "Most vulnerable",
+      "repeatHits": 1
+    },
+    {
+      "province": "Basilan",
+      "region": "Bangsamoro Autonomous Region In Muslim Mindanao (BARMM)",
+      "lat": 6.5788698,
+      "lon": 122.12724425,
+      "severeWarnings": 0,
+      "upsideSwing": 2.43,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Bataan",
+      "region": "Region III (Central Luzon)",
+      "lat": 14.66513774,
+      "lon": 120.42775986,
+      "severeWarnings": 1,
+      "upsideSwing": 1.65,
+      "group": "Low concern",
+      "repeatHits": 0
+    },
+    {
+      "province": "Batangas",
+      "region": "Region IV-A (Calabarzon)",
+      "lat": 13.91360708,
+      "lon": 121.03701312,
+      "severeWarnings": 1,
+      "upsideSwing": 5.22,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Benguet",
+      "region": "Cordillera Administrative Region (CAR)",
+      "lat": 16.55348834,
+      "lon": 120.70264554,
+      "severeWarnings": 6,
+      "upsideSwing": 0.99,
+      "group": "Exposed but stable",
+      "repeatHits": 1
+    },
+    {
+      "province": "Biliran",
+      "region": "Region VIII (Eastern Visayas)",
+      "lat": 11.58432949,
+      "lon": 124.48540604,
+      "severeWarnings": 1,
+      "upsideSwing": 0.41,
+      "group": "Low concern",
+      "repeatHits": 0
+    },
+    {
+      "province": "Bohol",
+      "region": "Region VII (Central Visayas)",
+      "lat": 9.88064393,
+      "lon": 124.20675476,
+      "severeWarnings": 1,
+      "upsideSwing": 1.52,
+      "group": "Low concern",
+      "repeatHits": 0
+    },
+    {
+      "province": "Bukidnon",
+      "region": "Region X (Northern Mindanao)",
+      "lat": 8.0051681,
+      "lon": 124.96819481,
+      "severeWarnings": 0,
+      "upsideSwing": 3.26,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Bulacan",
+      "region": "Region III (Central Luzon)",
+      "lat": 14.98035044,
+      "lon": 121.10858957,
+      "severeWarnings": 2,
+      "upsideSwing": 1.14,
+      "group": "Exposed but stable",
+      "repeatHits": 0
+    },
+    {
+      "province": "Cagayan",
+      "region": "Region II (Cagayan Valley)",
+      "lat": 18.06401878,
+      "lon": 121.81553421,
+      "severeWarnings": 7,
+      "upsideSwing": 2.17,
+      "group": "Most vulnerable",
+      "repeatHits": 3
+    },
+    {
+      "province": "Camarines Norte",
+      "region": "Region V (Bicol Region)",
+      "lat": 14.09345585,
+      "lon": 122.81669126,
+      "severeWarnings": 2,
+      "upsideSwing": 3.8,
+      "group": "Most vulnerable",
+      "repeatHits": 0
+    },
+    {
+      "province": "Camarines Sur",
+      "region": "Region V (Bicol Region)",
+      "lat": 13.68197008,
+      "lon": 123.20627302,
+      "severeWarnings": 2,
+      "upsideSwing": 2.25,
+      "group": "Most vulnerable",
+      "repeatHits": 0
+    },
+    {
+      "province": "Camiguin",
+      "region": "Region X (Northern Mindanao)",
+      "lat": 9.16838842,
+      "lon": 124.71361731,
+      "severeWarnings": 4,
+      "upsideSwing": 1.01,
+      "group": "Exposed but stable",
+      "repeatHits": 2
+    },
+    {
+      "province": "Capiz",
+      "region": "Region VI (Western Visayas)",
+      "lat": 11.37370827,
+      "lon": 122.64133496,
+      "severeWarnings": 1,
+      "upsideSwing": 1.1,
+      "group": "Low concern",
+      "repeatHits": 0
+    },
+    {
+      "province": "Catanduanes",
+      "region": "Region V (Bicol Region)",
+      "lat": 13.80842176,
+      "lon": 124.27470626,
+      "severeWarnings": 2,
+      "upsideSwing": 2.77,
+      "group": "Most vulnerable",
+      "repeatHits": 0
+    },
+    {
+      "province": "Cavite",
+      "region": "Region IV-A (Calabarzon)",
+      "lat": 14.27838709,
+      "lon": 120.85146283,
+      "severeWarnings": 0,
+      "upsideSwing": 1.55,
+      "group": "Low concern",
+      "repeatHits": 0
+    },
+    {
+      "province": "Cebu",
+      "region": "Region VII (Central Visayas)",
+      "lat": 10.34928559,
+      "lon": 123.78125813,
+      "severeWarnings": 1,
+      "upsideSwing": 2.32,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "City Of Isabela",
+      "region": "Region IX (Zamboanga Peninsula)",
+      "lat": 6.65293735,
+      "lon": 121.97727941,
+      "severeWarnings": 0,
+      "upsideSwing": 0.38,
+      "group": "Low concern",
+      "repeatHits": 0
+    },
+    {
+      "province": "Davao De Oro",
+      "region": "Region XI (Davao Region)",
+      "lat": 7.53552959,
+      "lon": 126.0852385,
+      "severeWarnings": 0,
+      "upsideSwing": 1.98,
+      "group": "Low concern",
+      "repeatHits": 0
+    },
+    {
+      "province": "Davao Del Norte",
+      "region": "Region XI (Davao Region)",
+      "lat": 7.61280915,
+      "lon": 125.62624264,
+      "severeWarnings": 0,
+      "upsideSwing": 0.68,
+      "group": "Low concern",
+      "repeatHits": 0
+    },
+    {
+      "province": "Davao Del Sur",
+      "region": "Region XI (Davao Region)",
+      "lat": 6.99828703,
+      "lon": 125.37562023,
+      "severeWarnings": 0,
+      "upsideSwing": 2.71,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Davao Occidental",
+      "region": "Region XI (Davao Region)",
+      "lat": 6.09403861,
+      "lon": 125.62203303,
+      "severeWarnings": 0,
+      "upsideSwing": 2.46,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Davao Oriental",
+      "region": "Region XI (Davao Region)",
+      "lat": 7.13567704,
+      "lon": 126.27482899,
+      "severeWarnings": 0,
+      "upsideSwing": 2.34,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Dinagat Islands",
+      "region": "Region XIII (Caraga)",
+      "lat": 10.16163118,
+      "lon": 125.58748098,
+      "severeWarnings": 1,
+      "upsideSwing": 2.45,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Eastern Samar",
+      "region": "Region VIII (Eastern Visayas)",
+      "lat": 11.68016857,
+      "lon": 125.37822695,
+      "severeWarnings": 1,
+      "upsideSwing": 2.51,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Guimaras",
+      "region": "Region VI (Western Visayas)",
+      "lat": 10.57970394,
+      "lon": 122.60885872,
+      "severeWarnings": 1,
+      "upsideSwing": 2.53,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Ifugao",
+      "region": "Cordillera Administrative Region (CAR)",
+      "lat": 16.82368566,
+      "lon": 121.1700354,
+      "severeWarnings": 4,
+      "upsideSwing": 2.69,
+      "group": "Most vulnerable",
+      "repeatHits": 1
+    },
+    {
+      "province": "Ilocos Norte",
+      "region": "Region I (Ilocos Region)",
+      "lat": 18.21820507,
+      "lon": 120.73941457,
+      "severeWarnings": 5,
+      "upsideSwing": 1.16,
+      "group": "Exposed but stable",
+      "repeatHits": 2
+    },
+    {
+      "province": "Ilocos Sur",
+      "region": "Region I (Ilocos Region)",
+      "lat": 17.28746596,
+      "lon": 120.53033434,
+      "severeWarnings": 6,
+      "upsideSwing": 2.89,
+      "group": "Most vulnerable",
+      "repeatHits": 3
+    },
+    {
+      "province": "Iloilo",
+      "region": "Region VI (Western Visayas)",
+      "lat": 11.03243959,
+      "lon": 122.61539346,
+      "severeWarnings": 1,
+      "upsideSwing": 2.94,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Isabela",
+      "region": "Region II (Cagayan Valley)",
+      "lat": 16.98951132,
+      "lon": 122.01735492,
+      "severeWarnings": 3,
+      "upsideSwing": 2.66,
+      "group": "Most vulnerable",
+      "repeatHits": 1
+    },
+    {
+      "province": "Kalinga",
+      "region": "Cordillera Administrative Region (CAR)",
+      "lat": 17.42996788,
+      "lon": 121.31300079,
+      "severeWarnings": 4,
+      "upsideSwing": 1.53,
+      "group": "Exposed but stable",
+      "repeatHits": 1
+    },
+    {
+      "province": "La Union",
+      "region": "Region I (Ilocos Region)",
+      "lat": 16.56110332,
+      "lon": 120.41695417,
+      "severeWarnings": 4,
+      "upsideSwing": 1.59,
+      "group": "Exposed but stable",
+      "repeatHits": 0
+    },
+    {
+      "province": "Laguna",
+      "region": "Region IV-A (Calabarzon)",
+      "lat": 14.27956327,
+      "lon": 121.51097425,
+      "severeWarnings": 1,
+      "upsideSwing": 1.04,
+      "group": "Low concern",
+      "repeatHits": 0
+    },
+    {
+      "province": "Lanao Del Sur",
+      "region": "Bangsamoro Autonomous Region In Muslim Mindanao (BARMM)",
+      "lat": 7.78185002,
+      "lon": 124.34850175,
+      "severeWarnings": 0,
+      "upsideSwing": 1.08,
+      "group": "Low concern",
+      "repeatHits": 0
+    },
+    {
+      "province": "Lanao del Norte",
+      "region": "Region X (Northern Mindanao)",
+      "lat": 8.01433078,
+      "lon": 123.93350271,
+      "severeWarnings": 0,
+      "upsideSwing": 0.74,
+      "group": "Low concern",
+      "repeatHits": 0
+    },
+    {
+      "province": "Leyte",
+      "region": "Region VIII (Eastern Visayas)",
+      "lat": 10.87437837,
+      "lon": 124.86086048,
+      "severeWarnings": 2,
+      "upsideSwing": 0.35,
+      "group": "Exposed but stable",
+      "repeatHits": 0
+    },
+    {
+      "province": "Maguindanao",
+      "region": "Bangsamoro Autonomous Region In Muslim Mindanao (BARMM)",
+      "lat": 7.18955064,
+      "lon": 124.25404525,
+      "severeWarnings": 0,
+      "upsideSwing": 2.9,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Marinduque",
+      "region": "Mimaropa Region",
+      "lat": 13.38482909,
+      "lon": 121.98254897,
+      "severeWarnings": 1,
+      "upsideSwing": 4.97,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Masbate",
+      "region": "Region V (Bicol Region)",
+      "lat": 12.16086097,
+      "lon": 123.74503562,
+      "severeWarnings": 1,
+      "upsideSwing": 5.34,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Misamis Occidental",
+      "region": "Region X (Northern Mindanao)",
+      "lat": 8.34118801,
+      "lon": 123.70566845,
+      "severeWarnings": 0,
+      "upsideSwing": 1.74,
+      "group": "Low concern",
+      "repeatHits": 0
+    },
+    {
+      "province": "Misamis Oriental",
+      "region": "Region X (Northern Mindanao)",
+      "lat": 8.62689683,
+      "lon": 124.98187606,
+      "severeWarnings": 0,
+      "upsideSwing": 2.23,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Mountain Province",
+      "region": "Cordillera Administrative Region (CAR)",
+      "lat": 17.05592758,
+      "lon": 121.05256767,
+      "severeWarnings": 4,
+      "upsideSwing": 3.98,
+      "group": "Most vulnerable",
+      "repeatHits": 0
+    },
+    {
+      "province": "NCR",
+      "region": "National Capital Region (NCR)",
+      "lat": 14.59932236,
+      "lon": 120.98493761,
+      "severeWarnings": 6,
+      "upsideSwing": 0.47,
+      "group": "Exposed but stable",
+      "repeatHits": 2
+    },
+    {
+      "province": "Negros Occidental",
+      "region": "Region VI (Western Visayas)",
+      "lat": 10.22389048,
+      "lon": 122.99911854,
+      "severeWarnings": 1,
+      "upsideSwing": 3.89,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Negros Oriental",
+      "region": "Region VII (Central Visayas)",
+      "lat": 9.73899193,
+      "lon": 122.99480169,
+      "severeWarnings": 1,
+      "upsideSwing": 2.3,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "North Cotabato",
+      "region": "Region XII (Soccsksargen)",
+      "lat": 7.18255075,
+      "lon": 125.03926534,
+      "severeWarnings": 0,
+      "upsideSwing": 2.12,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Northern Samar",
+      "region": "Region VIII (Eastern Visayas)",
+      "lat": 12.36118849,
+      "lon": 124.81821082,
+      "severeWarnings": 1,
+      "upsideSwing": 0.99,
+      "group": "Low concern",
+      "repeatHits": 0
+    },
+    {
+      "province": "Nueva Ecija",
+      "region": "Region III (Central Luzon)",
+      "lat": 15.65687999,
+      "lon": 120.99079632,
+      "severeWarnings": 3,
+      "upsideSwing": 1.13,
+      "group": "Exposed but stable",
+      "repeatHits": 0
+    },
+    {
+      "province": "Nueva Vizcaya",
+      "region": "Region II (Cagayan Valley)",
+      "lat": 16.25504614,
+      "lon": 121.10957184,
+      "severeWarnings": 4,
+      "upsideSwing": 1.3,
+      "group": "Exposed but stable",
+      "repeatHits": 1
+    },
+    {
+      "province": "Occidental Mindoro",
+      "region": "Mimaropa Region",
+      "lat": 12.86934587,
+      "lon": 121.01371755,
+      "severeWarnings": 1,
+      "upsideSwing": 4.48,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Oriental Mindoro",
+      "region": "Mimaropa Region",
+      "lat": 12.86676633,
+      "lon": 121.36614097,
+      "severeWarnings": 1,
+      "upsideSwing": 1.86,
+      "group": "Low concern",
+      "repeatHits": 0
+    },
+    {
+      "province": "Palawan",
+      "region": "Mimaropa Region",
+      "lat": 12.14507988,
+      "lon": 120.02798499,
+      "severeWarnings": 1,
+      "upsideSwing": 4.02,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Pampanga",
+      "region": "Region III (Central Luzon)",
+      "lat": 15.02291883,
+      "lon": 120.65665641,
+      "severeWarnings": 2,
+      "upsideSwing": 0.59,
+      "group": "Exposed but stable",
+      "repeatHits": 0
+    },
+    {
+      "province": "Pangasinan",
+      "region": "Region I (Ilocos Region)",
+      "lat": 16.00595322,
+      "lon": 120.33322685,
+      "severeWarnings": 4,
+      "upsideSwing": 1.84,
+      "group": "Exposed but stable",
+      "repeatHits": 0
+    },
+    {
+      "province": "Quezon",
+      "region": "Region IV-A (Calabarzon)",
+      "lat": 14.18943105,
+      "lon": 121.67080334,
+      "severeWarnings": 3,
+      "upsideSwing": 1.87,
+      "group": "Exposed but stable",
+      "repeatHits": 0
+    },
+    {
+      "province": "Quirino",
+      "region": "Region II (Cagayan Valley)",
+      "lat": 16.28469367,
+      "lon": 121.67692906,
+      "severeWarnings": 5,
+      "upsideSwing": 4.06,
+      "group": "Most vulnerable",
+      "repeatHits": 1
+    },
+    {
+      "province": "Rizal",
+      "region": "Region IV-A (Calabarzon)",
+      "lat": 14.56063868,
+      "lon": 121.26839748,
+      "severeWarnings": 7,
+      "upsideSwing": 0.98,
+      "group": "Exposed but stable",
+      "repeatHits": 4
+    },
+    {
+      "province": "Romblon",
+      "region": "Mimaropa Region",
+      "lat": 12.386653,
+      "lon": 122.58659184,
+      "severeWarnings": 1,
+      "upsideSwing": 2.2,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Sarangani",
+      "region": "Region XII (Soccsksargen)",
+      "lat": 6.02935078,
+      "lon": 124.65844513,
+      "severeWarnings": 0,
+      "upsideSwing": 3.15,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Siquijor",
+      "region": "Region VII (Central Visayas)",
+      "lat": 9.19785786,
+      "lon": 123.55958106,
+      "severeWarnings": 0,
+      "upsideSwing": 1.46,
+      "group": "Low concern",
+      "repeatHits": 0
+    },
+    {
+      "province": "Sorsogon",
+      "region": "Region V (Bicol Region)",
+      "lat": 12.82761527,
+      "lon": 123.99789027,
+      "severeWarnings": 1,
+      "upsideSwing": 1.39,
+      "group": "Low concern",
+      "repeatHits": 0
+    },
+    {
+      "province": "South Cotabato",
+      "region": "Region XII (Soccsksargen)",
+      "lat": 6.31303751,
+      "lon": 124.7945219,
+      "severeWarnings": 0,
+      "upsideSwing": 1.42,
+      "group": "Low concern",
+      "repeatHits": 0
+    },
+    {
+      "province": "Southern Leyte",
+      "region": "Region VIII (Eastern Visayas)",
+      "lat": 10.30265828,
+      "lon": 125.1561548,
+      "severeWarnings": 1,
+      "upsideSwing": 0.66,
+      "group": "Low concern",
+      "repeatHits": 0
+    },
+    {
+      "province": "Sultan Kudarat",
+      "region": "Region XII (Soccsksargen)",
+      "lat": 6.50123904,
+      "lon": 124.31932824,
+      "severeWarnings": 0,
+      "upsideSwing": 2.85,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Surigao Del Norte",
+      "region": "Region XIII (Caraga)",
+      "lat": 9.57541064,
+      "lon": 125.57633641,
+      "severeWarnings": 0,
+      "upsideSwing": 3.39,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Surigao Del Sur",
+      "region": "Region XIII (Caraga)",
+      "lat": 8.71029166,
+      "lon": 126.10125328,
+      "severeWarnings": 0,
+      "upsideSwing": 0.95,
+      "group": "Low concern",
+      "repeatHits": 0
+    },
+    {
+      "province": "Tarlac",
+      "region": "Region III (Central Luzon)",
+      "lat": 15.51461276,
+      "lon": 120.46262572,
+      "severeWarnings": 3,
+      "upsideSwing": 1.19,
+      "group": "Exposed but stable",
+      "repeatHits": 0
+    },
+    {
+      "province": "Tawi-Tawi",
+      "region": "Bangsamoro Autonomous Region In Muslim Mindanao (BARMM)",
+      "lat": 5.19783787,
+      "lon": 120.0342535,
+      "severeWarnings": 0,
+      "upsideSwing": 3.35,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Western Samar",
+      "region": "Region VIII (Eastern Visayas)",
+      "lat": 11.71342136,
+      "lon": 125.14911842,
+      "severeWarnings": 0,
+      "upsideSwing": 3.23,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Zambales",
+      "region": "Region III (Central Luzon)",
+      "lat": 15.30595813,
+      "lon": 120.11937122,
+      "severeWarnings": 1,
+      "upsideSwing": 1.15,
+      "group": "Low concern",
+      "repeatHits": 0
+    },
+    {
+      "province": "Zamboanga Del Norte",
+      "region": "Region IX (Zamboanga Peninsula)",
+      "lat": 7.93327397,
+      "lon": 122.42699002,
+      "severeWarnings": 0,
+      "upsideSwing": 1.03,
+      "group": "Low concern",
+      "repeatHits": 0
+    },
+    {
+      "province": "Zamboanga Del Sur",
+      "region": "Region IX (Zamboanga Peninsula)",
+      "lat": 7.81459,
+      "lon": 123.25706509,
+      "severeWarnings": 0,
+      "upsideSwing": 2.1,
+      "group": "High price swings",
+      "repeatHits": 0
+    },
+    {
+      "province": "Zamboanga Sibugay",
+      "region": "Region IX (Zamboanga Peninsula)",
+      "lat": 7.69319899,
+      "lon": 122.93933716,
+      "severeWarnings": 0,
+      "upsideSwing": 1.34,
+      "group": "Low concern",
+      "repeatHits": 0
+    }
+  ],
+  "regions": [
+    {
+      "shortRegion": "BARMM",
+      "severeWarnings": 0.0,
+      "upsideSwing": 2.67,
+      "group": "High price swings",
+      "provinceCount": 5,
+      "mostVulnerableProvinces": 0
+    },
+    {
+      "shortRegion": "Bicol",
+      "severeWarnings": 2.0,
+      "upsideSwing": 2.51,
+      "group": "Most vulnerable",
+      "provinceCount": 6,
+      "mostVulnerableProvinces": 3
+    },
+    {
+      "shortRegion": "CAR",
+      "severeWarnings": 4.5,
+      "upsideSwing": 3.11,
+      "group": "Most vulnerable",
+      "provinceCount": 6,
+      "mostVulnerableProvinces": 4
+    },
+    {
+      "shortRegion": "Cagayan Valley",
+      "severeWarnings": 4.0,
+      "upsideSwing": 2.42,
+      "group": "Most vulnerable",
+      "provinceCount": 5,
+      "mostVulnerableProvinces": 3
+    },
+    {
+      "shortRegion": "Calabarzon",
+      "severeWarnings": 1.0,
+      "upsideSwing": 1.55,
+      "group": "Low concern",
+      "provinceCount": 5,
+      "mostVulnerableProvinces": 0
+    },
+    {
+      "shortRegion": "Caraga",
+      "severeWarnings": 0.0,
+      "upsideSwing": 2.08,
+      "group": "Low concern",
+      "provinceCount": 5,
+      "mostVulnerableProvinces": 0
+    },
+    {
+      "shortRegion": "Central Luzon",
+      "severeWarnings": 2.0,
+      "upsideSwing": 1.15,
+      "group": "Exposed but stable",
+      "provinceCount": 7,
+      "mostVulnerableProvinces": 1
+    },
+    {
+      "shortRegion": "Central Visayas",
+      "severeWarnings": 1.0,
+      "upsideSwing": 1.91,
+      "group": "Low concern",
+      "provinceCount": 4,
+      "mostVulnerableProvinces": 0
+    },
+    {
+      "shortRegion": "Davao",
+      "severeWarnings": 0.0,
+      "upsideSwing": 2.34,
+      "group": "High price swings",
+      "provinceCount": 5,
+      "mostVulnerableProvinces": 0
+    },
+    {
+      "shortRegion": "Eastern Visayas",
+      "severeWarnings": 1.0,
+      "upsideSwing": 0.82,
+      "group": "Low concern",
+      "provinceCount": 6,
+      "mostVulnerableProvinces": 0
+    },
+    {
+      "shortRegion": "Ilocos",
+      "severeWarnings": 4.5,
+      "upsideSwing": 1.71,
+      "group": "Exposed but stable",
+      "provinceCount": 4,
+      "mostVulnerableProvinces": 1
+    },
+    {
+      "shortRegion": "Mimaropa",
+      "severeWarnings": 1.0,
+      "upsideSwing": 4.02,
+      "group": "High price swings",
+      "provinceCount": 5,
+      "mostVulnerableProvinces": 0
+    },
+    {
+      "shortRegion": "NCR",
+      "severeWarnings": 6.0,
+      "upsideSwing": 0.47,
+      "group": "Exposed but stable",
+      "provinceCount": 1,
+      "mostVulnerableProvinces": 0
+    },
+    {
+      "shortRegion": "Northern Mindanao",
+      "severeWarnings": 0.0,
+      "upsideSwing": 1.74,
+      "group": "Low concern",
+      "provinceCount": 5,
+      "mostVulnerableProvinces": 0
+    },
+    {
+      "shortRegion": "Soccsksargen",
+      "severeWarnings": 0.0,
+      "upsideSwing": 2.49,
+      "group": "High price swings",
+      "provinceCount": 4,
+      "mostVulnerableProvinces": 0
+    },
+    {
+      "shortRegion": "Western Visayas",
+      "severeWarnings": 1.0,
+      "upsideSwing": 2.18,
+      "group": "High price swings",
+      "provinceCount": 6,
+      "mostVulnerableProvinces": 0
+    },
+    {
+      "shortRegion": "Zamboanga Peninsula",
+      "severeWarnings": 0.0,
+      "upsideSwing": 1.18,
+      "group": "Low concern",
+      "provinceCount": 4,
+      "mostVulnerableProvinces": 0
+    }
+  ],
+  "kpiTrends": [
+    {
+      "kpi": "n_severe",
+      "year": 2024,
+      "geography": "National median per province",
+      "value": 0.0
+    },
+    {
+      "kpi": "n_severe",
+      "year": 2025,
+      "geography": "National median per province",
+      "value": 1.0
+    },
+    {
+      "kpi": "upside_swing",
+      "year": 2024,
+      "geography": "National median price-covered province",
+      "value": 1.56
+    },
+    {
+      "kpi": "upside_swing",
+      "year": 2025,
+      "geography": "National median price-covered province",
+      "value": 1.88
+    },
+    {
+      "kpi": "top5_repeat_hit_ranking",
+      "year": 2024,
+      "geography": "Rank 1: Rizal",
+      "value": 4.0
+    },
+    {
+      "kpi": "top5_repeat_hit_ranking",
+      "year": 2024,
+      "geography": "Rank 2: Cagayan",
+      "value": 3.0
+    },
+    {
+      "kpi": "top5_repeat_hit_ranking",
+      "year": 2024,
+      "geography": "Rank 3: Ilocos Sur",
+      "value": 3.0
+    },
+    {
+      "kpi": "top5_repeat_hit_ranking",
+      "year": 2024,
+      "geography": "Rank 4: Abra",
+      "value": 2.0
+    },
+    {
+      "kpi": "top5_repeat_hit_ranking",
+      "year": 2024,
+      "geography": "Rank 5: Apayao",
+      "value": 2.0
+    }
+  ],
+  "top5RepeatHitProvinces": [
+    {
+      "rank": 1,
+      "province": "Rizal",
+      "repeatHits": 4
+    },
+    {
+      "rank": 2,
+      "province": "Cagayan",
+      "repeatHits": 3
+    },
+    {
+      "rank": 3,
+      "province": "Ilocos Sur",
+      "repeatHits": 3
+    },
+    {
+      "rank": 4,
+      "province": "Abra",
+      "repeatHits": 2
+    },
+    {
+      "rank": 5,
+      "province": "Apayao",
+      "repeatHits": 2
+    }
+  ],
+  "priceMonthly": [
+    {
+      "month": "2024-01",
+      "median": 50.33,
+      "p10": 42.99,
+      "p90": 55.67
+    },
+    {
+      "month": "2024-02",
+      "median": 51.12,
+      "p10": 42.77,
+      "p90": 55.75
+    },
+    {
+      "month": "2024-03",
+      "median": 51.13,
+      "p10": 44.77,
+      "p90": 56.1
+    },
+    {
+      "month": "2024-04",
+      "median": 51.51,
+      "p10": 45.5,
+      "p90": 55.85
+    },
+    {
+      "month": "2024-05",
+      "median": 51.21,
+      "p10": 45.97,
+      "p90": 55.62
+    },
+    {
+      "month": "2024-06",
+      "median": 51.17,
+      "p10": 46.16,
+      "p90": 55.0
+    },
+    {
+      "month": "2024-07",
+      "median": 51.17,
+      "p10": 46.16,
+      "p90": 55.0
+    },
+    {
+      "month": "2024-08",
+      "median": 50.41,
+      "p10": 45.0,
+      "p90": 54.95
+    },
+    {
+      "month": "2024-09",
+      "median": 50.65,
+      "p10": 44.76,
+      "p90": 54.24
+    },
+    {
+      "month": "2024-10",
+      "median": 49.99,
+      "p10": 44.75,
+      "p90": 54.73
+    },
+    {
+      "month": "2024-11",
+      "median": 48.88,
+      "p10": 43.51,
+      "p90": 54.71
+    },
+    {
+      "month": "2024-12",
+      "median": 48.45,
+      "p10": 43.0,
+      "p90": 53.73
+    },
+    {
+      "month": "2025-01",
+      "median": 47.92,
+      "p10": 42.77,
+      "p90": 53.07
+    },
+    {
+      "month": "2025-02",
+      "median": 46.99,
+      "p10": 42.01,
+      "p90": 53.02
+    },
+    {
+      "month": "2025-03",
+      "median": 45.22,
+      "p10": 40.99,
+      "p90": 52.5
+    },
+    {
+      "month": "2025-04",
+      "median": 43.5,
+      "p10": 39.21,
+      "p90": 49.97
+    },
+    {
+      "month": "2025-05",
+      "median": 42.33,
+      "p10": 36.62,
+      "p90": 49.95
+    },
+    {
+      "month": "2025-06",
+      "median": 41.58,
+      "p10": 36.53,
+      "p90": 49.57
+    },
+    {
+      "month": "2025-07",
+      "median": 40.0,
+      "p10": 35.0,
+      "p90": 48.67
+    },
+    {
+      "month": "2025-08",
+      "median": 39.53,
+      "p10": 33.67,
+      "p90": 47.65
+    },
+    {
+      "month": "2025-09",
+      "median": 38.83,
+      "p10": 34.0,
+      "p90": 46.82
+    },
+    {
+      "month": "2025-10",
+      "median": 38.78,
+      "p10": 34.0,
+      "p90": 46.95
+    },
+    {
+      "month": "2025-11",
+      "median": 39.62,
+      "p10": 33.93,
+      "p90": 47.5
+    },
+    {
+      "month": "2025-12",
+      "median": 41.25,
+      "p10": 35.0,
+      "p90": 47.62
+    }
+  ],
+  "stormMonthly": [
+    {
+      "month": "2024-01",
+      "storms": 0
+    },
+    {
+      "month": "2024-02",
+      "storms": 0
+    },
+    {
+      "month": "2024-03",
+      "storms": 0
+    },
+    {
+      "month": "2024-04",
+      "storms": 0
+    },
+    {
+      "month": "2024-05",
+      "storms": 1
+    },
+    {
+      "month": "2024-06",
+      "storms": 0
+    },
+    {
+      "month": "2024-07",
+      "storms": 2
+    },
+    {
+      "month": "2024-08",
+      "storms": 1
+    },
+    {
+      "month": "2024-09",
+      "storms": 6
+    },
+    {
+      "month": "2024-10",
+      "storms": 2
+    },
+    {
+      "month": "2024-11",
+      "storms": 4
+    },
+    {
+      "month": "2024-12",
+      "storms": 2
+    },
+    {
+      "month": "2025-01",
+      "storms": 0
+    },
+    {
+      "month": "2025-02",
+      "storms": 0
+    },
+    {
+      "month": "2025-03",
+      "storms": 0
+    },
+    {
+      "month": "2025-04",
+      "storms": 0
+    },
+    {
+      "month": "2025-05",
+      "storms": 0
+    },
+    {
+      "month": "2025-06",
+      "storms": 1
+    },
+    {
+      "month": "2025-07",
+      "storms": 4
+    },
+    {
+      "month": "2025-08",
+      "storms": 5
+    },
+    {
+      "month": "2025-09",
+      "storms": 5
+    },
+    {
+      "month": "2025-10",
+      "storms": 5
+    },
+    {
+      "month": "2025-11",
+      "storms": 2
+    },
+    {
+      "month": "2025-12",
+      "storms": 1
+    }
+  ]
+}

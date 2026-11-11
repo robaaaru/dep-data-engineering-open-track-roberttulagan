@@ -1,103 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My DEP Project</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rice Prices & Typhoon Warnings | Philippines</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
   <style>
-    body {
-      font-family: system-ui, sans-serif;
-      max-width: 860px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
-      color: #1a1a1a;
-      line-height: 1.6;
-    }
-    h1 { font-size: 2rem; margin-bottom: 0.25rem; }
-    .subtitle { color: #555; margin-bottom: 2rem; }
-    section { margin-bottom: 2.5rem; }
-    h2 { font-size: 1.2rem; border-bottom: 2px solid #e5e5e5; padding-bottom: 0.4rem; }
-    .kpi-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .kpi-card {
-      background: #f5f5f5;
-      border-radius: 8px;
-      padding: 1rem;
-      text-align: center;
-    }
-    .kpi-value { font-size: 1.8rem; font-weight: 700; }
-    .kpi-label { font-size: 0.85rem; color: #666; margin-top: 0.25rem; }
-    .chart-placeholder {
-      background: #f0f0f0;
-      border-radius: 8px;
-      height: 240px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #999;
-      font-size: 0.9rem;
-      margin-top: 1rem;
-    }
-    footer { font-size: 0.8rem; color: #999; margin-top: 3rem; }
+    :root{--navy:#203b5b;--ink:#26384d;--muted:#63748a;--line:#d3dce6;--paper:#fff;--blue:#edf2f7;--cream:#fff2df;--gold:#d7931a;--red:#c84236}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 Arial,Helvetica,sans-serif}
+    .wrap{max-width:1180px;margin:auto;padding:32px 28px 52px}.hero{background:var(--navy);color:#fff;padding:38px 44px 34px;margin-bottom:30px;border-bottom:5px solid var(--gold)}
+    .eyebrow{color:#cbd7e5;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.hero h1{font-size:clamp(2rem,4vw,3.25rem);letter-spacing:-.035em;line-height:1.05;margin:12px 0;max-width:900px}.hero p{color:#dce5ef;max-width:720px;margin:0}
+    .kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:28px 0 38px;border-bottom:0;padding-bottom:0}.card{background:var(--blue);border:0;border-bottom:0;border-radius:0;padding:22px 18px;box-shadow:none}.kpis .card{border-left:5px solid var(--gold);padding:18px 14px}.kpi-value{font-size:2rem;font-weight:800;letter-spacing:-.04em;color:var(--navy)}.kpi-label{color:var(--muted);font-size:.82rem;line-height:1.35}
+    .grid{display:grid;grid-template-columns:1.25fr 1fr;gap:16px 24px;margin:26px 0}.card h2{font-size:1.08rem;letter-spacing:-.02em;margin:0 0 3px;color:var(--navy)}.hint{color:var(--muted);font-size:.84rem;margin:0 0 12px}.plot{height:410px}.wide{grid-column:1/-1}
+    .story{display:grid;grid-template-columns:1.35fr 1fr;gap:24px;margin:28px 0 34px}.story h2{font-size:1.25rem;letter-spacing:-.03em;margin:0 0 8px;color:var(--navy)}.story p{margin:0 0 10px}.story-card{background:var(--blue);border:0;border-left:5px solid var(--navy);border-radius:0;padding:20px 22px;box-shadow:none}.story-card.accent{background:var(--cream);border-left-color:var(--gold)}.story-card ul{margin:10px 0 0;padding-left:20px}.story-card li{margin:5px 0}.step-label{color:var(--gold);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .finding-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}.finding{border-left:5px solid var(--gold);padding:14px;background:var(--blue)}.finding strong{display:block;color:var(--navy);margin-bottom:3px}
+    .controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:30px 0 12px}.controls label{font-weight:600;font-size:.85rem;color:var(--navy)}.controls select,.controls input,.controls button{border:1px solid #c5d0dc;border-radius:2px;background:#fff;padding:8px 10px;color:var(--ink);font:inherit;font-size:.85rem}.controls button{cursor:pointer;background:var(--navy);color:#fff;border-color:var(--navy)}.controls button:hover{background:#2b4d73}
+    .table-wrap{overflow:auto;max-height:430px}table{border-collapse:collapse;width:100%;font-size:.86rem}th,td{text-align:left;padding:10px 9px;border-bottom:1px solid var(--line);white-space:nowrap}th{position:sticky;top:0;background:var(--navy);color:#fff;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;cursor:pointer}tbody tr:hover{background:var(--cream)}.pill{font-size:.75rem;font-weight:600}.most,.stable,.swings,.low{background:transparent;color:var(--ink)}
+    .note{color:var(--muted);font-size:.82rem}.footer{border-top:5px solid var(--gold);margin-top:30px;padding-top:18px;color:var(--muted);font-size:.8rem}.footer a{color:var(--navy)}
+    @media(max-width:850px){.kpis{grid-template-columns:repeat(2,1fr)}.grid,.story{grid-template-columns:1fr}.wide{grid-column:auto}.hero{padding:28px 25px}}@media(max-width:600px){.finding-grid{grid-template-columns:1fr}}@media(max-width:460px){.kpis{grid-template-columns:1fr 1fr}.wrap{padding:16px 12px}.plot{height:350px}}
   </style>
 </head>
 <body>
+<main class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Philippines · 2024 to 2025</div>
+    <h1>Where typhoon warnings and rice-price swings overlap</h1>
+    <p>A clear look at where serious typhoon warnings and rising rice prices appeared together.</p>
+  </header>
 
-  <h1><!-- Replace: Your Project Title --></h1>
-  <p class="subtitle"><!-- Replace: One-sentence description of what this project measures or predicts --></p>
+  <section class="story" aria-label="Dashboard introduction">
+    <article class="story-card">
+      <div class="step-label">Start here</div>
+      <h2>Why look at both?</h2>
+      <p>Typhoon warnings and rice prices tell two different parts of the story. Warnings show where serious storms were recorded. Rice prices show where prices moved up the most. Looking at both helps us see which places may need a closer look.</p>
+      <p>The simple question is: <strong>which Philippine regions and provinces had more serious warnings and bigger rice-price increases from 2024 to 2025?</strong></p>
+    </article>
+    <article class="story-card accent">
+      <div class="step-label">Important framing</div>
+      <h2>What this dashboard tells us</h2>
+      <p>A highlighted province is a place worth checking more closely. It does not prove that a typhoon caused a price increase, damage, or hardship.</p>
+      <p>Use the filters and hover over the charts to explore the results.</p>
+    </article>
+  </section>
 
-  <section>
-    <h2>Key Numbers</h2>
-    <div class="kpi-grid">
-      <div class="kpi-card">
-        <div class="kpi-value"><!-- value --></div>
-        <div class="kpi-label"><!-- KPI 1 label --></div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-value"><!-- value --></div>
-        <div class="kpi-label"><!-- KPI 2 label --></div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-value"><!-- value --></div>
-        <div class="kpi-label"><!-- KPI 3 label --></div>
-      </div>
+  <section class="kpis" aria-label="Key performance indicators">
+    <div class="card"><div class="kpi-value" id="kpiMost">...</div><div class="kpi-label">provinces with more warnings and bigger price rises</div></div>
+    <div class="card"><div class="kpi-value" id="kpiRegions">...</div><div class="kpi-label">regions with a highlighted province</div></div>
+    <div class="card"><div class="kpi-value" id="kpiWarned">...</div><div class="kpi-label">provinces listed in a serious warning</div></div>
+    <div class="card"><div class="kpi-value" id="kpiMedian">...</div><div class="kpi-label">typical size of a price rise</div></div>
+    <div class="card"><div class="kpi-value" id="kpiRate">...</div><div class="kpi-label">top repeatedly hit provinces ranked</div></div>
+  </section>
+
+  <section class="story-card">
+    <div class="step-label">The short answer</div>
+    <h2>Three regional signals stand out</h2>
+    <div class="finding-grid">
+      <div class="finding"><strong>Bicol, CAR, and Cagayan Valley</strong>stand out when the two measures are viewed together.</div>
+      <div class="finding"><strong>12 provinces</strong>had both more serious warnings and bigger price rises than the typical province.</div>
+      <div class="finding"><strong>A warning is not damage.</strong>Prices can also change because of supply, markets, or policy.</div>
     </div>
   </section>
 
-  <section>
-    <h2><!-- Replace: Chart or Analysis Title --></h2>
-    <!--
-      Replace this placeholder with an actual chart.
-      Options:
-        - <img> tag pointing to a saved chart in output/figures/
-        - Inline Chart.js or Plotly script
-        - A table of results
-    -->
-    <div class="chart-placeholder">[ Replace with your chart or table ]</div>
+  <section class="story-card">
+    <div class="step-label">How to read the charts</div>
+    <h2>How to read the charts</h2>
+    <p><strong>Serious warnings</strong> counts the storms where a province reached Wind Signal 3 or higher. <strong>Price rise</strong> shows the typical size of its upward price changes. Price drops do not add to this number.</p>
+    <p>In the first chart, the dashed lines mark the typical province. Points above both lines are labelled <strong>Most vulnerable</strong>. A point on a line is counted as lower.</p>
   </section>
 
-  <section>
-    <h2>Key Findings</h2>
-    <ul>
-      <li><!-- Finding 1 --></li>
-      <li><!-- Finding 2 --></li>
-      <li><!-- Finding 3 --></li>
-    </ul>
+  <div class="controls">
+    <label for="groupFilter">Show group</label><select id="groupFilter"><option>All groups</option><option>Most vulnerable</option><option>Exposed but stable</option><option>High price swings</option><option>Low concern</option></select>
+    <label for="search">Search province</label><input id="search" type="search" placeholder="e.g. Cagayan">
+    <button id="reset" type="button">Reset filters</button>
+  </div>
+
+  <section class="grid">
+    <article class="card"><div class="step-label">Where do they meet?</div><h2>Province comparison</h2><p class="hint">Hover over a dot to see its province.</p><div id="scatter" class="plot"></div><p class="note"><strong>Look for:</strong> dots in the upper right have both more serious warnings and bigger price rises.</p></article>
+    <article class="card"><div class="step-label">Which regions stand out?</div><h2>Regional comparison</h2><p class="hint">Each bar summarizes the provinces in that region.</p><div id="regions" class="plot"></div><p class="note"><strong>Look for:</strong> Bicol, CAR, and Cagayan Valley rise to the top of the combined picture.</p></article>
+    <article class="card wide"><div class="step-label">How did prices move?</div><h2>Rice prices over time</h2><p class="hint">The line shows the monthly typical price. The shaded area shows the range of prices reported.</p><div id="prices" class="plot"></div><p class="note"><strong>Look for:</strong> the overall direction and the months when prices moved more sharply.</p></article>
+    <article class="card wide"><div class="step-label">When were storms recorded?</div><h2>Storm activity by month</h2><p class="hint">Number of different storms recorded in each month.</p><div id="storms" class="plot"></div><p class="note"><strong>Remember:</strong> this shows warning activity, not damage or recovery time.</p></article>
+    <article class="card wide"><div class="step-label">Where were repeat hits concentrated?</div><h2>Top five repeatedly hit provinces</h2><p class="hint">Provinces are ranked by repeat severe-warning hits. A repeat hit means the same province had another severe warning within 14 days.</p><div id="warningRate" class="plot"></div><p class="note"><strong>Remember:</strong> this is a bulletin-timing measure, not a measure of damage or recovery.</p></article>
   </section>
 
-  <section>
-    <h2>Data Source</h2>
-    <p><!-- Describe your data source: name, URL, date range, format --></p>
+  <section class="card"><div class="step-label">Look closer</div><h2>Province details</h2><p class="hint">Search for a province or click a heading to sort the list.</p><div class="table-wrap"><table><thead><tr><th data-key="province">Province</th><th data-key="region">Region</th><th data-key="severeWarnings">Serious warnings</th><th data-key="upsideSwing">Price rise</th><th data-key="repeatHits">Repeat hits</th><th data-key="group">Group</th></tr></thead><tbody id="tableBody"></tbody></table></div></section>
+  <section class="story">
+    <article class="story-card">
+      <div class="step-label">What to investigate next</div>
+      <h2>What to look at next</h2>
+      <ul>
+        <li>Compare highlighted provinces with supply, transport, market, and household data.</li>
+        <li>Check whether the same pattern appears in other years.</li>
+        <li>Look at each storm separately. Not every warning has the same effect.</li>
+      </ul>
+    </article>
+    <article class="story-card accent">
+      <div class="step-label">Methodological boundary</div>
+      <h2>A careful conclusion</h2>
+      <p>This dashboard compares patterns. It does not explain why prices changed. Sulu and Batanes are not included in the price comparison because price readings are missing.</p>
+    </article>
   </section>
 
-  <footer>
-    Built by <!-- Your Name --> &middot; DEP Data Engineering Open Track 2026 &middot;
-    <a href="https://github.com/<!-- your-username/your-repo -->">GitHub Repo</a>
-  </footer>
+  <footer class="footer">Built for the DEP Data Engineering Open Track · <a href="https://github.com/robaaaru/dep-data-engineering-open-track-roberttulagan">View source on GitHub</a> · <a href="../METHODOLOGY.md">Methodology</a></footer>
+</main>
 
+<script>
+const COLORS={"Most vulnerable":"#c84236","Exposed but stable":"#315b8a","High price swings":"#d7931a","Low concern":"#8fb2c8"};
+let data, filtered, sortKey="group", sortAsc=true;
+const $=id=>document.getElementById(id);
+function groupClass(g){return g==="Most vulnerable"?"most":g==="Exposed but stable"?"stable":g==="High price swings"?"swings":"low"}
+function renderTable(){
+  const group=$("groupFilter").value, search=$("search").value.toLowerCase();
+  filtered=data.provinces.filter(p=>(group==="All groups"||p.group===group)&&p.province.toLowerCase().includes(search));
+  filtered.sort((a,b)=>{let x=a[sortKey],y=b[sortKey]; if(typeof x==="string") [x,y]=[x.toLowerCase(),y.toLowerCase()]; return (x<y?-1:x>y?1:0)*(sortAsc?1:-1)});
+  $("tableBody").innerHTML=filtered.map(p=>`<tr data-province="${p.province}"><td>${p.province}</td><td>${p.region.replace("Bangsamoro Autonomous Region In Muslim Mindanao (BARMM)","BARMM")}</td><td>${p.severeWarnings}</td><td>${p.upsideSwing.toFixed(2)}%</td><td>${p.repeatHits}</td><td><span class="pill ${groupClass(p.group)}">${p.group}</span></td></tr>`).join("");
+  renderScatter(filtered);
+}
+function baseLayout(title){return{margin:{l:55,r:20,t:8,b:48},paper_bgcolor:"transparent",plot_bgcolor:"transparent",font:{family:"Arial, Helvetica, sans-serif",color:"#26384d"},showlegend:true,legend:{orientation:"h",y:1.12},hoverlabel:{bgcolor:"#203b5b",font:{color:"#fff"}}}}
+function renderScatter(points){
+  const traces=["Most vulnerable","Exposed but stable","High price swings","Low concern"].map(g=>{const ps=points.filter(p=>p.group===g);return{x:ps.map(p=>p.severeWarnings),y:ps.map(p=>p.upsideSwing),text:ps.map(p=>p.province),customdata:ps.map(p=>[p.region,p.group]),mode:"markers",name:g,marker:{size:10,color:COLORS[g],line:{color:"#fff",width:1}}}});
+  Plotly.react("scatter",traces,{...baseLayout(),xaxis:{title:"Serious warnings (storms)",zeroline:false},yaxis:{title:"Typical price rise (%)",zeroline:false},shapes:[{type:"line",x0:data.meta.exposureMedian,x1:data.meta.exposureMedian,y0:0,y1:1,yref:"paper",line:{dash:"dot",color:"#98a2b3"}},{type:"line",x0:0,x1:1,xref:"paper",y0:data.meta.priceMedian,y1:data.meta.priceMedian,line:{dash:"dot",color:"#98a2b3"}}]},{responsive:true});
+}
+function renderCharts(){
+  const months=data.priceMonthly.map(x=>x.month);
+  Plotly.newPlot("prices",[{x:months,y:data.priceMonthly.map(x=>x.p90),line:{color:"transparent"},showlegend:false,hoverinfo:"skip"},{x:months,y:data.priceMonthly.map(x=>x.p10),fill:"tonexty",fillcolor:"rgba(215,147,26,.18)",line:{color:"transparent"},name:"Reported price range",hoverinfo:"skip"},{x:months,y:data.priceMonthly.map(x=>x.median),name:"Typical price",line:{color:"#315b8a",width:3},mode:"lines+markers"}],{...baseLayout(),xaxis:{title:"Month"},yaxis:{title:"Price (PHP/kg)",rangemode:"tozero"},hovermode:"x unified"},{responsive:true});
+  const rs=[...data.regions].sort((a,b)=>b.upsideSwing-a.upsideSwing);
+  Plotly.newPlot("regions",[{x:rs.map(x=>x.upsideSwing),y:rs.map(x=>x.shortRegion),type:"bar",orientation:"h",marker:{color:rs.map(x=>COLORS[x.group])},customdata:rs.map(x=>[x.severeWarnings,x.mostVulnerableProvinces,x.provinceCount,x.group]),hovertemplate:"%{y}<br>Typical price rise: %{x:.2f}%<br>Serious warnings: %{customdata[0]}<br>Highlighted provinces: %{customdata[1]}/%{customdata[2]}<br>%{customdata[3]}<extra></extra>"}],{...baseLayout(),showlegend:false,xaxis:{title:"Typical price rise (%)"},yaxis:{automargin:true}}, {responsive:true});
+  Plotly.newPlot("storms",[{x:data.stormMonthly.map(x=>x.month),y:data.stormMonthly.map(x=>x.storms),type:"bar",marker:{color:"#315b8a"},hovertemplate:"%{x}: %{y} storms<extra></extra>"}],{...baseLayout(),showlegend:false,xaxis:{title:"Month"},yaxis:{title:"Distinct storms",dtick:1}}, {responsive:true});
+  const repeatProvinces=[...data.top5RepeatHitProvinces].sort((a,b)=>a.rank-b.rank);
+  Plotly.newPlot("warningRate",[{x:repeatProvinces.map(x=>x.repeatHits),y:repeatProvinces.map(x=>`${x.rank}. ${x.province}`),type:"bar",orientation:"h",marker:{color:"#d7931a"},hovertemplate:"%{y}<br>%{x} repeat hits<extra></extra>"}],{...baseLayout(),showlegend:false,xaxis:{title:"Repeat severe-warning hits",rangemode:"tozero",dtick:1},yaxis:{title:"Province rank",autorange:"reversed"}}, {responsive:true});
+}
+async function init(){
+  const response=await fetch("data.json"); if(!response.ok) throw new Error("Could not load dashboard data.");
+  data=await response.json(); $("kpiMost").textContent=data.meta.mostVulnerableCount; $("kpiRegions").textContent=data.meta.mostVulnerableRegionCount; $("kpiWarned").textContent=data.meta.everWarnedCount+" / "+data.meta.provinceCount; $("kpiMedian").textContent=data.meta.priceMedian.toFixed(2)+"%"; $("kpiRate").textContent="Top 5";
+  renderCharts(); renderTable();
+  $("groupFilter").onchange=renderTable; $("search").oninput=renderTable; $("reset").onclick=()=>{$("groupFilter").value="All groups";$("search").value="";sortKey="group";sortAsc=true;renderTable()};
+  document.querySelectorAll("th[data-key]").forEach(th=>th.onclick=()=>{sortAsc=sortKey===th.dataset.key?!sortAsc:true;sortKey=th.dataset.key;renderTable()});
+  $("tableBody").onclick=e=>{const row=e.target.closest("tr");if(row){const p=data.provinces.find(x=>x.province===row.dataset.province);Plotly.Fx.hover("scatter",[{curveNumber:["Most vulnerable","Exposed but stable","High price swings","Low concern"].indexOf(p.group),pointNumber:data.provinces.filter(x=>x.group===p.group).indexOf(p)}])}};
+}
+init().catch(error=>{document.querySelector("main").innerHTML+=`<p class="card">Dashboard data could not be loaded: ${error.message}</p>`});
+</script>
 </body>
 </html>
