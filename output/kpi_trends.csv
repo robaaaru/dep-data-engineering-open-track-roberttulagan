@@ -3,8 +3,13 @@ n_severe,2024,National median per province,0.0
 n_severe,2025,National median per province,1.0
 upside_swing,2024,National median price-covered province,1.5627531040743594
 upside_swing,2025,National median price-covered province,1.8757470564722192
-top5_repeat_hit_ranking,2024,Rank 1: Rizal,4.0
-top5_repeat_hit_ranking,2024,Rank 2: Cagayan,3.0
-top5_repeat_hit_ranking,2024,Rank 3: Ilocos Sur,3.0
-top5_repeat_hit_ranking,2024,Rank 4: Abra,2.0
-top5_repeat_hit_ranking,2024,Rank 5: Apayao,2.0
+top5_distinct_storm_repeat_hits,2024,Rank 1: Abra,5.0
+top5_distinct_storm_repeat_hits,2024,Rank 2: Apayao,5.0
+top5_distinct_storm_repeat_hits,2024,Rank 3: Ilocos Norte,5.0
+top5_distinct_storm_repeat_hits,2024,Rank 4: Kalinga,5.0
+top5_distinct_storm_repeat_hits,2024,Rank 5: NCR,5.0
+top5_distinct_storm_repeat_hits,2025,Rank 1: Abra,3.0
+top5_distinct_storm_repeat_hits,2025,Rank 2: NCR,3.0
+top5_distinct_storm_repeat_hits,2025,Rank 3: Rizal,3.0
+top5_distinct_storm_repeat_hits,2025,Rank 4: Apayao,2.0
+top5_distinct_storm_repeat_hits,2025,Rank 5: Ifugao,2.0

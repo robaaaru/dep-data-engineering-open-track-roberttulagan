@@ -22,7 +22,7 @@ These results identify areas for follow-up. They do not prove cause and effect.
 
 - **Severe-warning exposure:** the number of storms where a province reached Wind Signal 3 or higher.
 - **Rice-price upside swing:** the root-mean-square size of upward percentage movements in regular-milled rice prices. Price decreases do not increase this score.
-- **Top five repeatedly hit provinces:** a ranked list of the five provinces with the most repeat severe-warning hits.
+- **Top five repeat-hit provinces:** a ranked list of the five provinces with the most repeat hits from distinct storms.
 - **Overlap:** places above the typical value for their comparison group on both severe-warning exposure and price swing. Places equal to the typical value are placed in the lower group.
 
 Repeat hits are tracked separately from the four groups, which use only the first two measures. The top-five repeat-hit KPI gives stakeholders a clear list of provinces to monitor.
@@ -53,7 +53,7 @@ Rice prices were recorded twice a month, using a first and second phase. Warning
 
 Regional results use the typical province value within each region. The project also checks the results using one price reading per month instead of two. This is a stability check, not a test of cause and effect.
 
-For the warning charts and repeat-hit KPI, a repeat hit means that the same province had another severe warning within 14 days. This is a timing measure, not a measure of damage or recovery.
+For the warning charts and repeat-hit KPI, a repeat hit means that a distinct storm had its first Signal 2+ listing for the same province within 14 days of the previous distinct storm's first Signal 2+ listing. This is a timing measure, not a measure of damage or recovery.
 
 ## Run the project
 
@@ -96,7 +96,7 @@ The pipeline does not create the stakeholder PDF. That brief is a separate, manu
 - **Stakeholder policy brief:** [`output/stakeholder_policy_brief.pdf`](output/stakeholder_policy_brief.pdf)
 - **KPI definitions:** [`output/kpi_definitions.csv`](output/kpi_definitions.csv)
 - **KPI trends:** [`output/kpi_trends.csv`](output/kpi_trends.csv)
-- **Top-five repeatedly hit provinces:** [`output/repeat_hit_provinces.csv`](output/repeat_hit_provinces.csv)
+- **Most repeat hits from distinct storms:** [`output/repeat_hit_provinces.csv`](output/repeat_hit_provinces.csv)
 - **Province groups:** [`output/province_groups.csv`](output/province_groups.csv)
 - **Region groups:** [`output/region_groups.csv`](output/region_groups.csv)
 - **Processed datasets:** [`data/processed/`](data/processed/)

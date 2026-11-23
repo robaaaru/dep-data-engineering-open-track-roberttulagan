@@ -18,7 +18,7 @@
       "severeWarnings": 6,
       "upsideSwing": 3.57,
       "group": "Most vulnerable",
-      "repeatHits": 2
+      "repeatHits": 8
     },
     {
       "province": "Agusan Del Norte",
@@ -78,7 +78,7 @@
       "severeWarnings": 5,
       "upsideSwing": 3.53,
       "group": "Most vulnerable",
-      "repeatHits": 2
+      "repeatHits": 7
     },
     {
       "province": "Aurora",
@@ -88,7 +88,7 @@
       "severeWarnings": 4,
       "upsideSwing": 4.41,
       "group": "Most vulnerable",
-      "repeatHits": 1
+      "repeatHits": 4
     },
     {
       "province": "Basilan",
@@ -128,7 +128,7 @@
       "severeWarnings": 6,
       "upsideSwing": 0.99,
       "group": "Exposed but stable",
-      "repeatHits": 1
+      "repeatHits": 4
     },
     {
       "province": "Biliran",
@@ -178,7 +178,7 @@
       "severeWarnings": 7,
       "upsideSwing": 2.17,
       "group": "Most vulnerable",
-      "repeatHits": 3
+      "repeatHits": 4
     },
     {
       "province": "Camarines Norte",
@@ -348,7 +348,7 @@
       "severeWarnings": 4,
       "upsideSwing": 2.69,
       "group": "Most vulnerable",
-      "repeatHits": 1
+      "repeatHits": 5
     },
     {
       "province": "Ilocos Norte",
@@ -358,7 +358,7 @@
       "severeWarnings": 5,
       "upsideSwing": 1.16,
       "group": "Exposed but stable",
-      "repeatHits": 2
+      "repeatHits": 6
     },
     {
       "province": "Ilocos Sur",
@@ -368,7 +368,7 @@
       "severeWarnings": 6,
       "upsideSwing": 2.89,
       "group": "Most vulnerable",
-      "repeatHits": 3
+      "repeatHits": 4
     },
     {
       "province": "Iloilo",
@@ -388,7 +388,7 @@
       "severeWarnings": 3,
       "upsideSwing": 2.66,
       "group": "Most vulnerable",
-      "repeatHits": 1
+      "repeatHits": 3
     },
     {
       "province": "Kalinga",
@@ -398,7 +398,7 @@
       "severeWarnings": 4,
       "upsideSwing": 1.53,
       "group": "Exposed but stable",
-      "repeatHits": 1
+      "repeatHits": 7
     },
     {
       "province": "La Union",
@@ -408,7 +408,7 @@
       "severeWarnings": 4,
       "upsideSwing": 1.59,
       "group": "Exposed but stable",
-      "repeatHits": 0
+      "repeatHits": 2
     },
     {
       "province": "Laguna",
@@ -478,7 +478,7 @@
       "severeWarnings": 1,
       "upsideSwing": 5.34,
       "group": "High price swings",
-      "repeatHits": 0
+      "repeatHits": 1
     },
     {
       "province": "Misamis Occidental",
@@ -508,7 +508,7 @@
       "severeWarnings": 4,
       "upsideSwing": 3.98,
       "group": "Most vulnerable",
-      "repeatHits": 0
+      "repeatHits": 5
     },
     {
       "province": "NCR",
@@ -518,7 +518,7 @@
       "severeWarnings": 6,
       "upsideSwing": 0.47,
       "group": "Exposed but stable",
-      "repeatHits": 2
+      "repeatHits": 8
     },
     {
       "province": "Negros Occidental",
@@ -568,7 +568,7 @@
       "severeWarnings": 3,
       "upsideSwing": 1.13,
       "group": "Exposed but stable",
-      "repeatHits": 0
+      "repeatHits": 1
     },
     {
       "province": "Nueva Vizcaya",
@@ -578,7 +578,7 @@
       "severeWarnings": 4,
       "upsideSwing": 1.3,
       "group": "Exposed but stable",
-      "repeatHits": 1
+      "repeatHits": 2
     },
     {
       "province": "Occidental Mindoro",
@@ -598,7 +598,7 @@
       "severeWarnings": 1,
       "upsideSwing": 1.86,
       "group": "Low concern",
-      "repeatHits": 0
+      "repeatHits": 1
     },
     {
       "province": "Palawan",
@@ -628,7 +628,7 @@
       "severeWarnings": 4,
       "upsideSwing": 1.84,
       "group": "Exposed but stable",
-      "repeatHits": 0
+      "repeatHits": 1
     },
     {
       "province": "Quezon",
@@ -638,7 +638,7 @@
       "severeWarnings": 3,
       "upsideSwing": 1.87,
       "group": "Exposed but stable",
-      "repeatHits": 0
+      "repeatHits": 3
     },
     {
       "province": "Quirino",
@@ -648,7 +648,7 @@
       "severeWarnings": 5,
       "upsideSwing": 4.06,
       "group": "Most vulnerable",
-      "repeatHits": 1
+      "repeatHits": 5
     },
     {
       "province": "Rizal",
@@ -658,7 +658,7 @@
       "severeWarnings": 7,
       "upsideSwing": 0.98,
       "group": "Exposed but stable",
-      "repeatHits": 4
+      "repeatHits": 8
     },
     {
       "province": "Romblon",
@@ -668,7 +668,7 @@
       "severeWarnings": 1,
       "upsideSwing": 2.2,
       "group": "High price swings",
-      "repeatHits": 0
+      "repeatHits": 1
     },
     {
       "province": "Sarangani",
@@ -985,61 +985,91 @@
       "value": 1.88
     },
     {
-      "kpi": "top5_repeat_hit_ranking",
+      "kpi": "top5_distinct_storm_repeat_hits",
       "year": 2024,
-      "geography": "Rank 1: Rizal",
-      "value": 4.0
+      "geography": "Rank 1: Abra",
+      "value": 5.0
     },
     {
-      "kpi": "top5_repeat_hit_ranking",
+      "kpi": "top5_distinct_storm_repeat_hits",
       "year": 2024,
-      "geography": "Rank 2: Cagayan",
+      "geography": "Rank 2: Apayao",
+      "value": 5.0
+    },
+    {
+      "kpi": "top5_distinct_storm_repeat_hits",
+      "year": 2024,
+      "geography": "Rank 3: Ilocos Norte",
+      "value": 5.0
+    },
+    {
+      "kpi": "top5_distinct_storm_repeat_hits",
+      "year": 2024,
+      "geography": "Rank 4: Kalinga",
+      "value": 5.0
+    },
+    {
+      "kpi": "top5_distinct_storm_repeat_hits",
+      "year": 2024,
+      "geography": "Rank 5: NCR",
+      "value": 5.0
+    },
+    {
+      "kpi": "top5_distinct_storm_repeat_hits",
+      "year": 2025,
+      "geography": "Rank 1: Abra",
       "value": 3.0
     },
     {
-      "kpi": "top5_repeat_hit_ranking",
-      "year": 2024,
-      "geography": "Rank 3: Ilocos Sur",
+      "kpi": "top5_distinct_storm_repeat_hits",
+      "year": 2025,
+      "geography": "Rank 2: NCR",
       "value": 3.0
     },
     {
-      "kpi": "top5_repeat_hit_ranking",
-      "year": 2024,
-      "geography": "Rank 4: Abra",
+      "kpi": "top5_distinct_storm_repeat_hits",
+      "year": 2025,
+      "geography": "Rank 3: Rizal",
+      "value": 3.0
+    },
+    {
+      "kpi": "top5_distinct_storm_repeat_hits",
+      "year": 2025,
+      "geography": "Rank 4: Apayao",
       "value": 2.0
     },
     {
-      "kpi": "top5_repeat_hit_ranking",
-      "year": 2024,
-      "geography": "Rank 5: Apayao",
+      "kpi": "top5_distinct_storm_repeat_hits",
+      "year": 2025,
+      "geography": "Rank 5: Ifugao",
       "value": 2.0
     }
   ],
   "top5RepeatHitProvinces": [
     {
       "rank": 1,
-      "province": "Rizal",
-      "repeatHits": 4
+      "province": "Abra",
+      "repeatHits": 8
     },
     {
       "rank": 2,
-      "province": "Cagayan",
-      "repeatHits": 3
+      "province": "Manila",
+      "repeatHits": 8
     },
     {
       "rank": 3,
-      "province": "Ilocos Sur",
-      "repeatHits": 3
+      "province": "Rizal",
+      "repeatHits": 8
     },
     {
       "rank": 4,
-      "province": "Abra",
-      "repeatHits": 2
+      "province": "Apayao",
+      "repeatHits": 7
     },
     {
       "rank": 5,
-      "province": "Apayao",
-      "repeatHits": 2
+      "province": "Kalinga",
+      "repeatHits": 7
     }
   ],
   "priceMonthly": [

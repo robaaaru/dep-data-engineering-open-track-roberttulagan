@@ -26,9 +26,9 @@ The five signal columns are split on semicolons and reshaped to one row per prov
 
 EDA is completed before overlap is counted. A storm is counted once, in the month of its first bulletin (the earliest `issued_time` for that `sid`). Storm type is based on the highest signal listed for any province: **never warned** means no province is listed in any bulletin; **Signal 1–2 only** means the highest listed signal is 1 or 2; **Signal 3+** means at least one province reached Signal 3 or higher. For example, a storm with several bulletins and a highest listed signal of 4 is counted once as Signal 3+ in the month of its earliest bulletin.
 
-**First severe listing and repeat hit.** The first severe listing of a `(storm, province)` is the earliest bulletin issue time at which that province is listed at Signal 3 or higher. A repeat hit is a Signal 3+ storm whose first severe listing for a province is within 14 days of that province's previous first severe listing. Fourteen days is a chosen default. For example, first severe listings on June 1 and June 12 are one repeat hit; June 1 and June 16 are not. These are bulletin-time measures and do not measure damage, recovery time, or storm strength.
+**First Signal 2+ listing and repeat hit.** The first Signal 2+ listing of a `(storm, province)` is the earliest bulletin issue time at which that province is listed at Signal 2 or higher. Each `(storm, province)` is counted once, regardless of how many bulletins list it. A repeat hit is a distinct Signal 2+ storm whose first Signal 2+ listing for a province is within 14 days of that province's previous distinct storm. Fourteen days is a chosen default. For example, first Signal 2+ listings on June 1 and June 12 are one repeat hit; June 1 and June 16 are not. These are bulletin-time measures and do not measure damage, recovery time, or storm strength.
 
-**Chart 1 — Typhoons.** The top part is a stacked monthly bar chart of the three storm types, with months with no storms shown as zero. The bottom part lists provinces with at least four Signal 3+ storms: the left panel shows `n_severe`, and the right panel puts one dot at each first severe listing on the same month axis. Filled dots are repeat hits and open dots are not repeat hits. Batanes remains in this warning chart even though it has no price data.
+**Chart 1 — Typhoons.** The top part is a stacked monthly bar chart of the three storm types, with months with no storms shown as zero. The bottom part lists provinces with at least four Signal 2+ storms: the left panel shows the Signal 2+ storm count, and the right panel puts one dot at each first Signal 2+ listing on the same month axis. Filled dots are repeat hits and open dots are not repeat hits. Batanes remains in this warning chart even though it has no price data.
 
 **Monthly national price.** Each monthly point is the median of all regular-milled readings from both phases in that month. The band is the 10th to 90th percentile of those same readings. For example, the January 2024 point combines every available first- and second-phase regular-milled reading in January.
 
@@ -40,7 +40,7 @@ EDA is completed before overlap is counted. A storm is counted once, in the mont
 
 Prices are sorted by province, period, and phase. **Upside swing** is the root-mean-square of percentage rises between consecutive readings, with falls counted as zero. The main calculation uses all 48 readings in the price table. A robustness check applies the same formula to the 24 first-of-month readings. Measures of overall spread were not used because a steady decline inflates them; 75 of 81 provinces ended lower. Total change is printed only as a descriptive end-versus-start summary, and reporting rhythm is described by the share of months with identical first- and second-phase prices.
 
-The notebook also tracks a **top-five repeatedly hit provinces KPI**. A repeat hit is a later first severe listing for the same province within 14 days of the previous first severe listing. For each year, provinces are ranked by repeat-hit count, with alphabetical ordering used to break ties, and the five highest-ranked provinces are reported. This gives stakeholders a clear monitoring list; it is not a damage or recovery measure.
+The notebook also tracks a **top-five repeat-hit provinces KPI**. It counts later first Signal 2+ listings from distinct storms for the same province within 14 days of the previous distinct storm, ranks provinces by repeat-hit count, and uses alphabetical ordering to break ties. The five highest-ranked provinces are reported. This gives stakeholders a clear monitoring list; it is not a damage or recovery measure.
 
 ## 6. Rolling up to regions
 
@@ -74,7 +74,7 @@ Regional shares are printed as `k/n`: the number of Most vulnerable provinces di
 
 ## 10. Findings and decisions
 
-The run checks 2,717 long warning rows, 63 provinces ever warned, 29 warned storms out of 41, 568 province-storm pairs, and peak counts of 260, 168, 75, 54, and 11 for Signals 1 through 5. Storms occur in 14 of 24 months. There are 28 repeat hits across 16 provinces; Rizal has 4, while Cagayan and Ilocos Sur have 3 each.
+The run checks 2,717 long warning rows, 63 provinces ever warned, 29 warned storms out of 41, 568 province-storm pairs, and peak counts of 260, 168, 75, 54, and 11 for Signals 1 through 5. Storms occur in 14 of 24 months. There are 94 Signal 2+ repeat hits across 24 provinces; the overall top five are Abra and NCR (8 each), Rizal (8), and Apayao and Kalinga (7 each).
 
 The national regular-milled price ends lower for 75 of 81 provinces. Upside swing has a median of about 1.98 across all 48 readings and about 2.11 under one reading per month. The regional Most vulnerable list is Bicol, CAR, and Cagayan Valley; CAR and Cagayan Valley also pass the monthly check. Twelve provinces are Most vulnerable in the all-reading version, and 10 are Most vulnerable under both versions.
 
@@ -83,13 +83,13 @@ The year-over-year comparison shows that warning exposure and price upside swing
 | Decision | Choice |
 |---|---|
 | Price-spike measure | Upside swing across all 48 readings |
-| Annual monitoring KPI | Ranked list of the five provinces with the most repeat hits |
+| Annual monitoring KPI | Ranked list of the five provinces with the most repeat hits from distinct storms |
 | Exposure axis | `n_severe` only |
 | Overlap | Above-median exposure and upside swing |
 | Robustness check | Same formula on 24 first-of-month readings |
 | Monthly national price | Median of all regular-milled readings from both phases |
 | Regional roll-up | Province median |
-| Repeat-hit KPI | Sum of repeat-hit events in the top five provinces by year |
+| Repeat-hit KPI | Sum of repeat-hit events from distinct storms in the top five provinces by year |
 | Year comparison | Regional medians calculated separately for 2024 and 2025 |
 | Missing prices | Exclude Sulu and Batanes from volatility |
 | Forecast table | `typhoon_forecast` not used |
@@ -104,9 +104,8 @@ The data cover two years, counts are small, and region sizes range from 1 to 7 p
 - **Peak:** Highest signal level for a province during one storm.
 - **n_severe:** Number of storms with peak signal at least 3.
 - **Upside swing:** Root-mean-square percentage rise, with falls counted as zero.
-- **Repeat hit:** A later first severe listing within 14 days of the same province's previous first severe listing.
+- **Repeat hit:** A later first Signal 2+ listing from a distinct storm within 14 days of the same province's previous distinct storm.
 - **Overlap:** Above-median exposure and above-median upside swing.
 - **Borderline:** Within 0.01 of an instability median.
 - **Robustness check:** Comparison with the one-reading-per-month box assignment.
 - **EDA:** Descriptive exploratory data analysis.
-- **Repeat hit:** A Signal 3+ storm within 14 days of the same province's previous first severe listing.
