@@ -103,6 +103,8 @@ The pipeline does not create the stakeholder PDF. That brief is a separate, manu
 
 The notebook contains the data checks, KPI calculations, descriptive charts, regional and provincial groupings, robustness check, findings, and limitations.
 
+Dashboard Link: https://robaaaru.github.io/dep-data-engineering-open-track-roberttulagan/
+
 ## Important limitations
 
 This project covers two years and describes patterns in the available data. It does not measure:
